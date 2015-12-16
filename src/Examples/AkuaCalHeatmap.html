@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>TestDriver1Axis0Pkm</title>
+    <script src="../Libs/D3/d3.min.js"></script>
+    <script src="../Libs/CalHeatmap/cal-heatmap.min.js"></script>
+    <script data-main="../main" src="../Libs/require.js"></script>
+    <link rel="stylesheet" href="../Libs/nvd3/nv.d3.css" type="text/css" />
+    <link rel="stylesheet" href="../Libs/CalHeatmap/cal-heatmap.css" type="text/css" />
+</head>
+<body>
+    <div style="background-color:#99FFFF">
+        <h2>Filter VisualizationElement </h2>
+        <div id="chart1" style="margin:20px"></div>
+    </div>
+
+    <div style="background-color:#CCFF00">
+        <h2>Display VisualizationElement </h2>
+        <div id="chart2" style="margin:20px"></div>
+    </div>
+</body>
+
+<script type="text/javascript">
+    require(["MultiSelect", "AkuaCalHeatmap", "CompositeVisel", ], function (TestFilter, TestChart, CompositeVisel) {
+
+        /*
+            Definition of dimensions and elements
+            No need to chagne something here
+        */
+        var foo = { foo: "polen" };
+        eJune = E(D("Month"), "June");
+        eAugust = E(D("Month"), "August");
+
+        ePoland = E(D("Country"), "Poland");
+        eGermany = E(D("Country"), "Germany");
+
+        eCar = E(D("Product"), "Car");
+        eBike = E(D("Product"), "Bike");
+        eBoat = E(D("Product"), "Boat");
+
+        eCost = E(D("Measure"), "Costs");
+        eRevenue = E(D("Measure"), "Revenue");
+
+        eBezirkMitte = E(D("Bezirk"), "Mitte");
+        eBezirkPankow = E(D("Bezirk"), "Pankow");
+        eBezirkFriedrichshain = E(D("Bezirk"), "Friedrichshain");
+
+        eTimestamp1 = E(D("Bezirk"), "946686600");
+        eTimestamp2 = E(D("Bezirk"), "946706692");
+        eTimestamp3 = E(D("Bezirk"), "946709243");
+
+        /*
+            In case you are developing a filtering VisualizationElement
+            define it here by replacing TestChart with the desired VisualizationElement
+        */
+
+        mselect = TestFilter({
+            //mselect = TestChart({
+            axis0: A({ crosslists: [TCL([T([eAugust]), T([eJune])])] }),
+            Connection: LocalCubeConnection(HyperCube(SDTL([
+                         T([ePoland, eAugust, eCar, eCost], 440)
+                        , T([eGermany, eAugust, eBike, eCost], 77)
+                        , T([ePoland, eAugust, eBoat, eCost], 120)
+                        , T([eGermany, eJune, eCar, eCost], 640)
+                        , T([ePoland, eJune, eBike, eCost], 27)
+                        , T([eGermany, eJune, eBoat, eCost], 150)
+
+            ]))),
+            actAsFilter: true
+        });
+
+
+        /*
+            In case you are developing a non filtering VisualizationElement
+            define it here by replacing TestChart with the desired VisualizationElement
+        */
+        //barchart = AkuaLeaflet({
+        barchart = TestChart({
+            axis0: A({
+                crosslists:
+                [
+                    TCL([
+                        T([eTimestamp1]), T([eTimestamp2]), T([eTimestamp3])
+                    ])
+                ]
+            }),
+            //slicer: T([eCost]),
+
+            Connection: LocalCubeConnection(HyperCube(SDTL([
+               T([eAugust, eTimestamp1], 88),
+               T([eAugust, eTimestamp2], 33),
+               T([eJune, eTimestamp3], 55)
+
+            ]))),
+            reactOnFilter: true
+
+        });
+
+
+        /*
+            No need to change something here
+        */
+        parente = new CompositeVisel();
+        parente.addChild(mselect);
+        parente.addChild(barchart);
+
+        mselect.getViewCaller(jQuery("#chart1"));
+        barchart.getViewCaller(jQuery("#chart2"));
+
+        console.log(barchart.GetVisualGeruestQuery().ToAkuaDsl());
+    });
+</script>
+</html>

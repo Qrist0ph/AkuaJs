@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Ext.Panel</title>
+    <!-- Importing styles -->
+
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+</head>
+<body>
+	<div id="center"></div>
+</body>
+
+<script type="text/javascript">
+
+Object.prototype.getName = function() { 
+   var funcNameRegex = /function (.{1,})\(/;
+   var results = (funcNameRegex).exec((this).constructor.toString());
+   return (results && results.length > 1) ? results[1] : "";
+};
+
+function Apple (type) {
+    this.type = type;
+    this.color = "red";
+	
+}
+
+function Callback () {    
+    this.color = "red";	
+	alert(this.color);
+}
+
+
+Apple.prototype.getInfo = function() {	
+	alert(this.type);
+    return this.color + ' ' + this.type + ' apple';
+};
+
+Apple.prototype.getView = function() {
+    var view = jQuery("<div> my View 2</div>");
+	var me = this;	
+	view.click( function(){me.getInfo()});
+	return view;
+};
+
+
+
+	//console.log(new Apple("hh").getInfo());
+	//jQuery("#center").html(new Apple("hh").getView().html());
+	jQuery("#center").append(new Apple("Typ 1").getView());
+	jQuery("#center").append(new Apple("Typ 2").getView());
+
+</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Akua Console</title>
+    <!-- Importing styles -->
+    <script src="Libs/D3/d3.min.js"></script>
+
+    <script data-main="main" src="Libs/require.js"></script>
+    <link rel="stylesheet" href="Libs/nvd3/nv.d3.min.css" type="text/css" />
+
+</head>
+<body>
+   
+    
+    
+    
+
+
+
+
+    <div class=" shadow panel panel-default">
+
+        <div class="panel-heading">
+            <div>
+                &nbsp;
+                <div style="float:left">
+                    <h3 class="panel-title" stlye="float: left">Portfolio-Zusammensetzung im zeitlichen Verlauf</h3>
+                </div>
+                <div style="float:right;text-align:right;">
+                    <img src="/Content/QuestionMark.png" data-toggle='tooltip' data-placement='bottom' title='Zeigt die gesamte Portfoliogröße und die enthaltenen Positionen. Dabei zeigt korreliert die beanspruchte Fläche einer Position mit der wertmäßigen Höhe des Investitionsbetrags. Über die X-Achse zeigt die Änderung der Portfolio-Zusammensetzung im zeitlichen Verlauf.' />
+                </div>
+            </div>
+        </div>
+        <div id="a72ead5d" style="padding:5px;height:402px">
+
+
+            <div id='a52ad6'> </div>
+            <script type='text/javascript'>
+                require(['StackedAreaChartNvd3'], function (StackedAreaChartNvd3) {
+                    var chart2 = function () {
+                        var chart =
+                                 StackedAreaChartNvd3({ axis0: A({ crosslists: [TCL([T([E(D('datum'), '1331679600000')], null), T([E(D('datum'), '1332284400000')], null), T([E(D('datum'), '1332885600000')], null), T([E(D('datum'), '1333490400000')], null), ])] }), axis1: A({ crosslists: [TCL([T([E(D('Bezeichnung'), 'Anfangsbestand')], null), T([E(D('Bezeichnung'), 'Henkel')], null), T([E(D('Bezeichnung'), 'Bayer')], null), ])] }), slicer: T([], null), Connection: LocalCubeConnection(DumbTupleStore(SDTL([T([E(D('Bezeichnung'), 'Anfangsbestand'), E(D('datum'), '1331679600000')], 100000), T([E(D('Bezeichnung'), 'Anfangsbestand'), E(D('datum'), '1332284400000')], 100000), T([E(D('Bezeichnung'), 'Anfangsbestand'), E(D('datum'), '1332885600000')], 100000), T([E(D('Bezeichnung'), 'Anfangsbestand'), E(D('datum'), '1333490400000')], 100000), T([E(D('Bezeichnung'), 'Henkel'), E(D('datum'), '1331679600000')], 700), T([E(D('Bezeichnung'), 'Henkel'), E(D('datum'), '1332284400000')], 700), T([E(D('Bezeichnung'), 'Henkel'), E(D('datum'), '1332885600000')], 700), T([E(D('Bezeichnung'), 'Henkel'), E(D('datum'), '1333490400000')], 700), T([E(D('Bezeichnung'), 'Bayer'), E(D('datum'), '1332284400000')], 700), T([E(D('Bezeichnung'), 'Bayer'), E(D('datum'), '1332885600000')], 700), T([E(D('Bezeichnung'), 'Bayer'), E(D('datum'), '1333490400000')], 700)]))), showLegend: false });
+                        return chart;
+                    }(); chart2.getViewCaller($('#a52ad6'));
+                });
+            </script>
+
+
+        </div>   VermoegensZustaendeStreamGraph
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>AkuaJs</id>
+        <version>VersionHere</version>
+        <title>AkuaJs Library</title>
+        <authors>caussem</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>My package description.</description>
+    </metadata>
+    <files>
+        <file src="..\WebProjects\AkuaJs\Release\Core\AkuaCore.js" target="content\Scripts\AkuaJs\Core\AkuaCore.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Core\CoreBundle.js" target="content\Scripts\AkuaJs\Core\CoreBundle.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\CalHeatmap\cal-heatmap.css" target="content\Scripts\AkuaJs\Libs\CalHeatmap\cal-heatmap.css" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\CalHeatmap\cal-heatmap.js" target="content\Scripts\AkuaJs\Libs\CalHeatmap\cal-heatmap.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\CalHeatmap\cal-heatmap.min.js" target="content\Scripts\AkuaJs\Libs\CalHeatmap\cal-heatmap.min.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\D3\d3.min.js" target="content\Scripts\AkuaJs\Libs\D3\d3.min.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\Heatmap\heatmap-arcgis.js" target="content\Scripts\AkuaJs\Libs\Heatmap\heatmap-arcgis.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\Heatmap\heatmap-gmaps.js" target="content\Scripts\AkuaJs\Libs\Heatmap\heatmap-gmaps.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\Heatmap\heatmap-leaflet.js" target="content\Scripts\AkuaJs\Libs\Heatmap\heatmap-leaflet.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\Heatmap\heatmap-openlayers-renderer.js" target="content\Scripts\AkuaJs\Libs\Heatmap\heatmap-openlayers-renderer.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\Heatmap\heatmap-openlayers.js" target="content\Scripts\AkuaJs\Libs\Heatmap\heatmap-openlayers.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\Heatmap\heatmap.js" target="content\Scripts\AkuaJs\Libs\Heatmap\heatmap.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\Heatmap\QuadTree.js" target="content\Scripts\AkuaJs\Libs\Heatmap\QuadTree.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\leaflet\leaflet.css" target="content\Scripts\AkuaJs\Libs\leaflet\leaflet.css" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\leaflet\leaflet.js" target="content\Scripts\AkuaJs\Libs\leaflet\leaflet.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\leaflet\us-states.js" target="content\Scripts\AkuaJs\Libs\leaflet\us-states.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\nvd3\nv.d3.css" target="content\Scripts\AkuaJs\Libs\nvd3\nv.d3.css" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\nvd3\nv.d3.js" target="content\Scripts\AkuaJs\Libs\nvd3\nv.d3.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\nvd3\nv.d3.min.css" target="content\Scripts\AkuaJs\Libs\nvd3\nv.d3.min.css" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\nvd3\nv.d3.min.js" target="content\Scripts\AkuaJs\Libs\nvd3\nv.d3.min.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\css\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\css\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\css\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\css\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\css\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\css\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\css\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\css\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\css\smoothness\images\ui-bg_glass_75_dadada_1x400.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\css\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\css\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\css\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\css\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\css\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\css\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\css\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\css\smoothness\images\ui-icons_222222_256x240.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\css\smoothness\images\ui-icons_222222_256x240.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\css\smoothness\images\ui-icons_2e83ff_256x240.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\css\smoothness\images\ui-icons_2e83ff_256x240.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\css\smoothness\images\ui-icons_454545_256x240.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\css\smoothness\images\ui-icons_454545_256x240.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\css\smoothness\images\ui-icons_888888_256x240.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\css\smoothness\images\ui-icons_888888_256x240.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\css\smoothness\images\ui-icons_cd0a0a_256x240.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\css\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\css\smoothness\jquery-ui-1.8.16.custom.css" target="content\Scripts\AkuaJs\Libs\SlickGrid\css\smoothness\jquery-ui-1.8.16.custom.css" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\css\examples.css" target="content\Scripts\AkuaJs\Libs\SlickGrid\css\examples.css" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\actions.gif" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\actions.gif" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\ajax-loader-small.gif" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\ajax-loader-small.gif" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\arrow_redo.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\arrow_redo.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\arrow_right_peppermint.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\arrow_right_peppermint.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\arrow_right_spearmint.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\arrow_right_spearmint.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\arrow_undo.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\arrow_undo.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\bullet_blue.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\bullet_blue.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\bullet_star.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\bullet_star.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\bullet_toggle_minus.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\bullet_toggle_minus.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\bullet_toggle_plus.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\bullet_toggle_plus.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\calendar.gif" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\calendar.gif" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\collapse.gif" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\collapse.gif" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\comment_yellow.gif" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\comment_yellow.gif" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\down.gif" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\down.gif" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\drag-handle.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\drag-handle.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\editor-helper-bg.gif" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\editor-helper-bg.gif" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\expand.gif" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\expand.gif" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\header-bg.gif" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\header-bg.gif" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\header-columns-bg.gif" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\header-columns-bg.gif" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\header-columns-over-bg.gif" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\header-columns-over-bg.gif" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\help.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\help.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\info.gif" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\info.gif" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\listview.gif" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\listview.gif" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\pencil.gif" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\pencil.gif" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\row-over-bg.gif" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\row-over-bg.gif" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\sort-asc.gif" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\sort-asc.gif" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\sort-asc.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\sort-asc.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\sort-desc.gif" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\sort-desc.gif" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\sort-desc.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\sort-desc.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\stripes.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\stripes.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\tag_red.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\tag_red.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\tick.png" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\tick.png" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\user_identity.gif" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\user_identity.gif" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\images\user_identity_plus.gif" target="content\Scripts\AkuaJs\Libs\SlickGrid\images\user_identity_plus.gif" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\lib\firebugx.js" target="content\Scripts\AkuaJs\Libs\SlickGrid\lib\firebugx.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\lib\jquery-1.7.min.js" target="content\Scripts\AkuaJs\Libs\SlickGrid\lib\jquery-1.7.min.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\lib\jquery-ui-1.8.16.custom.min.js" target="content\Scripts\AkuaJs\Libs\SlickGrid\lib\jquery-ui-1.8.16.custom.min.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\lib\jquery.event.drag-2.2.js" target="content\Scripts\AkuaJs\Libs\SlickGrid\lib\jquery.event.drag-2.2.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\lib\jquery.event.drop-2.2.js" target="content\Scripts\AkuaJs\Libs\SlickGrid\lib\jquery.event.drop-2.2.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\lib\jquery.jsonp-2.4.min.js" target="content\Scripts\AkuaJs\Libs\SlickGrid\lib\jquery.jsonp-2.4.min.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\lib\jquery.simulate.js" target="content\Scripts\AkuaJs\Libs\SlickGrid\lib\jquery.simulate.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\lib\jquery.sparkline.min.js" target="content\Scripts\AkuaJs\Libs\SlickGrid\lib\jquery.sparkline.min.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\lib\qunit.css" target="content\Scripts\AkuaJs\Libs\SlickGrid\lib\qunit.css" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\lib\qunit.js" target="content\Scripts\AkuaJs\Libs\SlickGrid\lib\qunit.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\slick-default-theme.css" target="content\Scripts\AkuaJs\Libs\SlickGrid\slick-default-theme.css" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\slick.core.js" target="content\Scripts\AkuaJs\Libs\SlickGrid\slick.core.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\slick.dataview.js" target="content\Scripts\AkuaJs\Libs\SlickGrid\slick.dataview.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\slick.editors.js" target="content\Scripts\AkuaJs\Libs\SlickGrid\slick.editors.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\slick.formatters.js" target="content\Scripts\AkuaJs\Libs\SlickGrid\slick.formatters.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\slick.grid.css" target="content\Scripts\AkuaJs\Libs\SlickGrid\slick.grid.css" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\slick.grid.js" target="content\Scripts\AkuaJs\Libs\SlickGrid\slick.grid.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\slick.groupitemmetadataprovider.js" target="content\Scripts\AkuaJs\Libs\SlickGrid\slick.groupitemmetadataprovider.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\SlickGrid\slick.remotemodel.js" target="content\Scripts\AkuaJs\Libs\SlickGrid\slick.remotemodel.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\d3.v3.min.js" target="content\Scripts\AkuaJs\Libs\d3.v3.min.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\jquery-ui.js" target="content\Scripts\AkuaJs\Libs\jquery-ui.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\jscharts.js" target="content\Scripts\AkuaJs\Libs\jscharts.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\jshashtable-2.1.js" target="content\Scripts\AkuaJs\Libs\jshashtable-2.1.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\linq.min.js" target="content\Scripts\AkuaJs\Libs\linq.min.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\nv.d3.min.js" target="content\Scripts\AkuaJs\Libs\nv.d3.min.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\require.js" target="content\Scripts\AkuaJs\Libs\require.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\underscore-min.js" target="content\Scripts\AkuaJs\Libs\underscore-min.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Libs\underscore-min.map" target="content\Scripts\AkuaJs\Libs\underscore-min.map" />
+        <file src="..\WebProjects\AkuaJs\Release\AkuaCalHeatmap.js" target="content\Scripts\AkuaJs\AkuaCalHeatmap.js" />
+        <file src="..\WebProjects\AkuaJs\Release\AkuaGallery.html" target="content\Scripts\AkuaJs\AkuaGallery.html" />
+        <file src="..\WebProjects\AkuaJs\Release\AkuaGoogleMap.js" target="content\Scripts\AkuaJs\AkuaGoogleMap.js" />
+        <file src="..\WebProjects\AkuaJs\Release\AkuaGoogleMapGeoJson.js" target="content\Scripts\AkuaJs\AkuaGoogleMapGeoJson.js" />
+        <file src="..\WebProjects\AkuaJs\Release\AkuaLeaflet.js" target="content\Scripts\AkuaJs\AkuaLeaflet.js" />
+        <file src="..\WebProjects\AkuaJs\Release\BarChartNvd3.js" target="content\Scripts\AkuaJs\BarChartNvd3.js" />
+        <file src="..\WebProjects\AkuaJs\Release\CompositeVisel.js" target="content\Scripts\AkuaJs\CompositeVisel.js" />
+        <file src="..\WebProjects\AkuaJs\Release\HtmlGrid.js" target="content\Scripts\AkuaJs\HtmlGrid.js" />
+        <file src="..\WebProjects\AkuaJs\Release\main.js" target="content\Scripts\AkuaJs\main.js" />
+        <file src="..\WebProjects\AkuaJs\Release\MultiArea.js" target="content\Scripts\AkuaJs\MultiArea.js" />
+        <file src="..\WebProjects\AkuaJs\Release\MultiLineChartNvd3.js" target="content\Scripts\AkuaJs\MultiLineChartNvd3.js" />
+        <file src="..\WebProjects\AkuaJs\Release\MultiSelect.js" target="content\Scripts\AkuaJs\MultiSelect.js" />
+        <file src="..\WebProjects\AkuaJs\Release\MultiSelectJqueryUi.js" target="content\Scripts\AkuaJs\MultiSelectJqueryUi.js" />
+        <file src="..\WebProjects\AkuaJs\Release\PieChartNvd3.js" target="content\Scripts\AkuaJs\PieChartNvd3.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Scalar.js" target="content\Scripts\AkuaJs\Scalar.js" />
+        <file src="..\WebProjects\AkuaJs\Release\ScalarChange.js" target="content\Scripts\AkuaJs\ScalarChange.js" />
+        <file src="..\WebProjects\AkuaJs\Release\SlickGrid.js" target="content\Scripts\AkuaJs\SlickGrid.js" />
+        <file src="..\WebProjects\AkuaJs\Release\StackedAreaChartNvd3.js" target="content\Scripts\AkuaJs\StackedAreaChartNvd3.js" />
+        <file src="..\WebProjects\AkuaJs\Release\StackedBarChartNvd3.js" target="content\Scripts\AkuaJs\StackedBarChartNvd3.js" />
+        <file src="..\WebProjects\AkuaJs\Release\Sunburst.js" target="content\Scripts\AkuaJs\Sunburst.js" />
+        <file src="..\WebProjects\AkuaJs\Release\TreemapD3.js" target="content\Scripts\AkuaJs\TreemapD3.js" />
+        <file src="..\WebProjects\AkuaJs\Release\TwoScalar.js" target="content\Scripts\AkuaJs\TwoScalar.js" />
+    </files>
+</package>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>TestDriver1Axis0Pkm</title>
+	<script src="../Libs/D3/d3.min.js"></script>
+
+	<script data-main="../main" src="../Libs/require.js"></script>
+	<link rel="stylesheet" href="../Libs/nvd3/nv.d3.min.css" type="text/css" />   
+
+
+<link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
+   
+	<style>
+	body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  background-color: #fff;
+  width: 960px;
+  height: 700px;
+  margin-top: 10px;
+}
+
+#main {
+  float: left;
+  width: 750px;
+}
+
+#sidebar {
+  float: right;
+  width: 100px;
+}
+
+#sequence {
+  width: 600px;
+  height: 70px;
+}
+
+#legend {
+  padding: 10px 0 0 3px;
+}
+
+#sequence text, #legend text {
+  font-weight: 600;
+  fill: #fff;
+}
+
+#chart {
+  position: relative;
+}
+
+#chart path {
+  stroke: #fff;
+}
+
+#explanation {
+  position: absolute;
+  top: 260px;
+  left: 305px;
+  width: 140px;
+  text-align: center;
+  color: #666;
+  z-index: -1;
+}
+
+#percentage {
+  font-size: 2.5em;
+}
+	</style>
+	
+</head>
+<body>
+
+    <div id="center"></div>
+</body>
+
+<script type="text/javascript">
+    require([ "Sunburst"], function(TestChart) {
+
+        var foo = { foo: "polen" };
+        eJune = E(D("Month"), "June");
+        eAugust = E(D("Month"), "August");
+
+        ePoland = E(D("Country"), "Poland");
+        
+		eCar = E(D("Product"), "Car");
+        eBike = E(D("Product"), "Bike");
+        eBoat = E(D("Product"), "Boat");
+
+        eCost = E(D("Measure"), "Costs");
+        eRevenue = E(D("Measure"), "Revenue");
+
+        barchart = TestChart({
+            axis0: A({
+                crosslists:
+                [
+                    TCL([
+                        T([eCar, eAugust]), T([eBike]), T([eBoat])
+                    ])
+                ]
+            }),
+            slicer: T([eCost]),
+			
+            Connection: LocalCubeConnection(DumbTupleStore(SDTL([
+						 T([eAugust, eCar, eCost],440)
+						,T([ eBike, eCost],77)	  
+						,T([ eBoat, eCost],120)])))
+
+        });
+		
+        barchart.getViewCaller(jQuery("#center"));
+		
+		console.log(barchart.GetVisualGeruestQuery().ToAkuaDsl());
+    });
+</script>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Akua Console</title>
+    <!-- Importing styless -->
+    <
+    <script src="Libs/D3/d3.min.js"></script>
+
+    <script data-main="main" src="Libs/require.js"></script>
+    <link rel="stylesheet" href="Libs/nvd3/nv.d3.min.css" type="text/css" />
+
+</head>
+<body>
+    <div>
+        <textarea rows="4" cols="50" id="code">
+            function(){var chart =
+            new TreemapD3({  axis0: A({crosslists:[TCL([T([E(D('Supplier'),'Bantam Books')],null),T([E(D('Supplier'),'Rewe')],null),])]}), pkm0: T([E(D('Measures'),'Unit Price')],null), pkm1: T([E(D('Measures'),'Revenue')],null), slicer:T([E(D('Aggregation'),'SUM')],null)   ,Connection:  LocalCubeConnection(HyperCube(SDTL([ T([E(D('Aggregation'),'SUM'),E(D('Measures'),'Unit Price'),E(D('Supplier'),'Bantam Books')],156),T([E(D('Aggregation'),'SUM'),E(D('Measures'),'Unit Price'),E(D('Supplier'),'Rewe')],14),T([E(D('Aggregation'),'SUM'),E(D('Measures'),'Revenue'),E(D('Supplier'),'Bantam Books')],67.536),T([E(D('Aggregation'),'SUM'),E(D('Measures'),'Revenue'),E(D('Supplier'),'Rewe')],4.112) ]))) });
+            return chart; }()
+        </textarea>
+        <input type="button" value="Run" onclick="run()" />
+    </div>
+    <div id="center">
+        <ul></ul>
+    </div>
+</body>
+
+<script type="text/javascript">
+
+    function run() {
+        require(['MultiSelect', 'BarChartNvd3', 'PieChartNvd3', 'TreemapD3', 'MultiSelectJqueryUi'],
+            function (MultiSelect, BarChartNvd3, PieChartNvd3, TreemapD3, MultiSelectJqueryUi) {
+        var mycode = $("#code").val();
+        eval("function foo(){ var r=" + mycode + ";return r;}");
+        var visel = foo();
+        jQuery("#center").html(visel.getViewCaller());
+        });
+    }
+
+   
+
+
+
+
+
+   
+</script>
+</html>

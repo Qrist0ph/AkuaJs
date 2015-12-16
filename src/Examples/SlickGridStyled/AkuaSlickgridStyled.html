@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>AkuaSlickGrid Styled</title>
+
+    <script data-main="../../main" src="../../Libs/require.js"></script>
+
+    <link rel="stylesheet" href="../../Libs/SlickGrid/slick.grid.css" type="text/css" />
+   
+   <link rel="stylesheet" href="plugins-common.css" type="text/css" />
+   
+   <link rel="stylesheet" href="plugins-excel-style.css" type="text/css" />
+   <!-- 
+	-->
+</head>
+<body>
+    das ist ein text 
+    <div id="center" style="width: 200px;"></div>
+	und noch einer
+</body>
+
+<script type="text/javascript">
+    require(["SlickGrid"], function (SlickGrid) {
+
+        var foo = { foo: "polen" };
+        eJuni = E(D("monat"), "juni");
+        eAugust = E(D("monat"), "Augsut");
+
+        ePolen = E(D("land"), foo);
+        eAuto = E(D("produkt"), foo);
+        eFahrrad = E(D("produkt"), "fahrread");
+        eBoot = E(D("produkt"), "<img src='http://www.stadt-bremerhaven.de/wp-content/themes/Bremerhaven2012/images/social-facebook.png' ></img>");
+
+        eCost = E(D("measure"), "costs");
+        eRevenue = E(D("measure"), "revenue");
+
+        slickgrid = SlickGrid({
+            axis0: A(
+           {
+               crosslists: [
+                  TCL([
+                      T([eAuto]), T([eFahrrad]), T([eBoot])
+                  ]),
+                  TCL([
+                      T([eAugust])
+                  ])
+               ],
+               permutation: [1, 0]
+           }),
+		   width : 400
+        });
+        
+        slickgrid.getViewCaller(jQuery("#center"));
+    });
+</script>
+
+</html>

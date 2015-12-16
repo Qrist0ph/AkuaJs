@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>AkuaGoogleMap</title>
+
+ <script data-main="../main" src="../Libs/require.js"></script>
+ <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+
+    <style media="screen" type="text/css">
+       html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+
+    </style>
+
+</head>
+<body>
+    das ist ein text
+    <div id="center">
+        <ul></ul>
+    </div>
+</body>
+
+<script type="text/javascript">
+    require([ "AkuaGoogleMap","MultiSelect","MultiSelectJqueryUi"], function(GoogleMap,MultiSelect,MultiSelectJqueryUi) {
+
+        ePoint1 = E(D("point"), { x: -25.363882,y:131.044922});
+		eText1 = E(D("text"), "eine statdt");
+				
+		ePoint2 = E(D("point"), { x: -23.363882,y:131.044922});
+		eText2 = E(D("text"), "eine zweite statdt");			
+		
+      
+		mselect = MultiSelectJqueryUi({ options: [T([ePoint1,eText1]),T([ePoint2,eText2])] });
+        map = GoogleMap({
+            axis0: A({
+                crosslists:
+                [
+                    TCL([
+                        T([ePoint1,eText1]),T([ePoint2,eText2])
+                    ])
+                ]
+            }),
+			
+			Connection : LocalCubeConnection(HyperCube(SDTL([ 
+			T([ePoint1,eText1],88),
+			T([ePoint2,eText2],55)
+						])))
+           
+
+        });
+	
+		parent = new Apple("Typ 1");
+        parent.addChild(mselect);
+        parent.addChild(map);        
+
+        parent.getViewCaller($("#center"));
+		
+		
+    });
+</script>
+
+</html>

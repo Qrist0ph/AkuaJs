@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Ext.Panel</title>
+    <!-- Importing styles -->
+
+ <script type="text/javascript" src="libs/jshashtable-2.1.js"></script>
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="Libs/Heatmap/heatmap.js"></script>
+<script type="text/javascript" src="Libs/Heatmap/heatmap-gmaps.js"></script>
+<script src="Core/Toolkit.js" ></script>
+
+
+
+<style>
+				#heatmapArea {
+				position:relative;
+				float:left;
+				width:800px;
+				height:600px;
+				border:1px dashed black;
+			}
+		</style>
+
+</head>
+<body>
+	<div id="center">sfsfsf
+	<ul></ul>
+	</div>	
+</body>
+
+<script type="text/javascript">
+//RequiresAkuaJsPlus(["BarChartNvd3","Libs/Heatmap/heatmap.js","Libs/Heatmap/heatmap-gmaps.js","GoogleHeatmap"], function () {
+RequiresAkuaJsPlus(["BarChartNvd3","GoogleHeatmap"], function () {
+
+ eJuni = E(D("monat"),"juni");
+ eAugust = E(D("monat"),"Augsut");
+
+ ePolen =E(D("land"),"polen");
+ eAuto = E(D("produkt"), "auto");
+ eFahrrad = E(D("produkt"), "fahrread");
+ eBoot = E(D("produkt"), "boot");
+
+ eCost = E(D("measure"), "costs");
+ eRevenue = E(D("measure"), "revenue");
+
+ parente = new Apple("Typ 1");
+
+ barchart = new GoogleHeatmap({axis0:
+	[
+		TCL([
+			T([eAuto]), T([eFahrrad]), T([eBoot])
+		]),
+        TCL([
+			T([eAugust])
+        ])
+	],
+     pkm0: T([eCost]),
+     pkm1: T([eRevenue])
+	});
+
+parente.addChild(barchart);
+
+barchart.ViselCache = new Hashtable();
+barchart.ViselCache.put(T([eAuto]), 22);
+barchart.ViselCache.put(T([eFahrrad]), 55);
+barchart.ViselCache.put(T([eJuni,eAuto]), 33);
+barchart.ViselCache.put(T([eAugust, eAuto, eCost]), 440);
+barchart.ViselCache.put(T([eAugust, eFahrrad, eCost]), 77);
+barchart.ViselCache.put(T([eAugust, eBoot, eCost]), 120);
+barchart.ViselCache.put(T([eAugust, eBoot, eRevenue]), 0.9);
+barchart.ViselCache.put(T([eAugust, eAuto, eRevenue]), 0.5);
+barchart.ViselCache.put(T([eAugust, eFahrrad, eRevenue]), -0.7);
+
+
+
+jQuery("#center").html( parente.getViewCaller());
+
+
+
+});
+</script>
+
+</html>
