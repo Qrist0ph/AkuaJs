@@ -1,5 +1,5 @@
-function define(){
-	
+function define(requited, funktion){
+	var factory = funktion();
 }
 
 

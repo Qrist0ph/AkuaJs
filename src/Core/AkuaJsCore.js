@@ -25,8 +25,8 @@ _A.prototype.Tuples = function () {
 		tuple.Permutation = me.Permutation; 
 	return tuple; });	
 }
-function define(){
-	
+function define(requited, funktion){
+	var factory = funktion();
 }
 
 
