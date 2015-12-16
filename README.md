@@ -1,12 +1,9 @@
 # AkuaJs
 The AkuaJs Visualization Library
 
-
+# Quick Start
 ```html
-<h2>Example of code</h2>
-
-<pre>
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
@@ -55,5 +52,4 @@ The AkuaJs Visualization Library
     });
 </script>
 </html>
-</pre>
 ```
