@@ -1,9 +1,7 @@
 //Stand 13.04.2014
 requirejs.config({
     paths: {
-        "jquery": [
-           
-        ],
+      
         'linq.min':['Libs/linq.min'],
         'underscore-min':[ 'Libs/underscore-min'],
         'jshashtable-2.1':['Libs/jshashtable-2.1'],
