@@ -2,9 +2,7 @@
 requirejs.config({
     paths: {
         "jquery": [
-            "https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min",
-            // Wenn der CDN versagt, lade jQuery von unserem Server
-            "libs/jquery"
+           
         ],
         'linq.min':['Libs/linq.min'],
         'underscore-min':[ 'Libs/underscore-min'],
