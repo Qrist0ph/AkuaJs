@@ -4,7 +4,7 @@ define(['Core/CoreBundle'], function () {
 
     function MultiSelectJqueyUi(configObject) {
         Apple.call(this, configObject);
-        this.options = configObject.axis0.Tuples().ToArray();
+        this.options = configObject.options;
         var me = this;
     }
 

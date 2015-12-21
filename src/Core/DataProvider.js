@@ -6,7 +6,7 @@ _LocalCubeDataProvider.prototype.ExecuteVisualGeruestQuery = function (visualGer
     if(connection){
     var allAusduenner = visualGeruestQuery.GetAllAusduennFilters();
     var cubeTuples = connection.Tuples();
-     $.each(allAusduenner.ToArray(), function (key, value) {
+     _.each(allAusduenner.ToArray(), function (key, value) {
        cubeTuples = value.Filter(cubeTuples);
     });
     
