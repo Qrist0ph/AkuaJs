@@ -1,5 +1,5 @@
  jQuery.sap.declare("AkuaJs.BarChart"); 
- jQuery.sap.require("AkuaJs.Core");
+//  jQuery.sap.require("AkuaJs.Core");
 
 
    
