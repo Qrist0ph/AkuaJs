@@ -1,5 +1,5 @@
  jQuery.sap.declare("AkuaJs.BarChart"); 
- jQuery.sap.require("AkuaJs.Core");
+//  jQuery.sap.require("AkuaJs.Core");
 
 
    
@@ -42,7 +42,7 @@
 
 				});
 
-				barchart.getViewCaller(eeee.srcControl.$()[0]);
+				barchart.getViewCaller(eeee.srcControl.$());
 				
 			});
                
