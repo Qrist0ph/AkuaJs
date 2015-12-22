@@ -1,4 +1,4 @@
-define(['Core/CoreBundle', 'nv.d3.min'], function() {
+define(['core/CoreBundle', 'nv.d3.min'], function() {
 _CompositeVisel.prototype = new Apple();        // Here's where the inheritance occurs 
 _CompositeVisel.prototype.constructor = _CompositeVisel;       // Otherwise instances of Cat would have a constructor of Mammal 
 function _CompositeVisel(configObject) {

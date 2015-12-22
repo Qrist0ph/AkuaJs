@@ -1,4 +1,4 @@
-define(['Core/CoreBundle', 'nv.d3.min'], function () {
+define(['core/CoreBundle', 'nv.d3.min'], function () {
 
     _MultiArea.prototype = new Apple();        // Here's where the inheritance occurs 
     _MultiArea.prototype.constructor = _MultiArea;       // Otherwise instances of Cat would have a constructor of Mammal 

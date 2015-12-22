@@ -1,4 +1,4 @@
-define(['Core/CoreBundle', 'nv.d3.min'], function () {
+define(['core/CoreBundle', 'nv.d3.min'], function () {
 
     _StackedAreaChartNvd3.prototype = new Apple();        // Here's where the inheritance occurs 
     _StackedAreaChartNvd3.prototype.constructor = _StackedAreaChartNvd3;       // Otherwise instances of Cat would have a constructor of Mammal 

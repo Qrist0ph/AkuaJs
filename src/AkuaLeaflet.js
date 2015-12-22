@@ -1,4 +1,4 @@
-define(['Core/CoreBundle', "leaflet"], function () {
+define(['core/CoreBundle', "leaflet"], function () {
 
     _LeafletMap.prototype = new Apple();
     _LeafletMap.prototype.constructor = _LeafletMap;

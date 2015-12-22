@@ -1,4 +1,4 @@
-define(['Core/CoreBundle', 'nv.d3.min'], function () {
+define(['core/CoreBundle', 'nv.d3.min'], function () {
 
     _Sunburst.prototype = new Apple();
     _Sunburst.prototype.constructor = _Sunburst;

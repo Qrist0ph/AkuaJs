@@ -1,4 +1,4 @@
-define(['Core/CoreBundle'], function() {
+define(['core/CoreBundle'], function() {
 	MultiSelect.prototype = new Apple();        // Here's where the inheritance occurs 
 	MultiSelect.prototype.constructor=MultiSelect;       // Otherwise instances of Cat would have a constructor of Mammal 
 	function MultiSelect(configObject){ 	

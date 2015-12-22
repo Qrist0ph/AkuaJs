@@ -1,4 +1,4 @@
-define(['Core/CoreBundle'], function () {
+define(['core/CoreBundle'], function () {
     _ScalarChange.prototype = new Apple();        // Here's where the inheritance occurs 
     _ScalarChange.prototype.constructor = _ScalarChange;       // Otherwise instances of Cat would have a constructor of Mammal 
     function _ScalarChange(configObject) {

@@ -1,4 +1,4 @@
-define(['Core/CoreBundle'], function () {
+define(['core/CoreBundle'], function () {
     MultiSelectJqueyUi.prototype = new Apple();        // Here's where the inheritance occurs 
     MultiSelectJqueyUi.prototype.constructor = MultiSelectJqueyUi;       // Otherwise instances of Cat would have a constructor of Mammal 
 

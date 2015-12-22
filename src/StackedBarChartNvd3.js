@@ -1,4 +1,4 @@
-define(['Core/CoreBundle', 'nv.d3.min'], function () {
+define(['core/CoreBundle', 'nv.d3.min'], function () {
 
     _StackedBarChartNvd3.prototype = new Apple();
     _StackedBarChartNvd3.prototype.constructor = _StackedBarChartNvd3;

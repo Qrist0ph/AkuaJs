@@ -1,4 +1,4 @@
-define(['Core/CoreBundle', 'nv.d3.min'], function () {
+define(['core/CoreBundle', 'nv.d3.min'], function () {
 
 
     MultiLineChartNvd3.prototype = new Apple();        // Here's where the inheritance occurs 

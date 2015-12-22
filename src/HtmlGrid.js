@@ -1,4 +1,4 @@
-define(['Core/CoreBundle',   'nv.d3.min'], function () {
+define(['core/CoreBundle',   'nv.d3.min'], function () {
     _HtmlGrid.prototype = new Apple();        // Here's where the inheritance occurs 
     _HtmlGrid.prototype.constructor = _HtmlGrid;       // Otherwise instances of Cat would have a constructor of Mammal 
     function _HtmlGrid(configObject) {

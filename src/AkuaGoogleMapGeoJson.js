@@ -1,4 +1,4 @@
-define(['Core/CoreBundle'], function() {
+define(['core/CoreBundle'], function() {
 
 	_AkuaGoogleMap.prototype = new Apple();        // Here's where the inheritance occurs 
 	_AkuaGoogleMap.prototype.constructor= _AkuaGoogleMap;       // Otherwise instances of Cat would have a constructor of Mammal 

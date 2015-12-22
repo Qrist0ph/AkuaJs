@@ -1,4 +1,4 @@
-define(['Core/CoreBundle', 'nv.d3.min'], function () {
+define(['core/CoreBundle', 'nv.d3.min'], function () {
     _TreemapD3.prototype = new Apple();
     _TreemapD3.prototype.constructor = _TreemapD3;
     function _TreemapD3(configObject) {

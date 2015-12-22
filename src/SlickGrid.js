@@ -1,4 +1,4 @@
-define(['Core/CoreBundle', 'jquery.event.drag-2.2', 'slick.core', 'slick.grid'], function () {
+define(['core/CoreBundle', 'jquery.event.drag-2.2', 'slick.core', 'slick.grid'], function () {
     SlickGrid.prototype = new Apple();        // Here's where the inheritance occurs 
     SlickGrid.prototype.constructor = SlickGrid;       // Otherwise instances of Cat would have a constructor of Mammal 
     function SlickGrid(configObject) {
