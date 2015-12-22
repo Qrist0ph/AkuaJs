@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <title>TestDriver1Axis0Pkm</title>
+    <title>TestDriver2Axis0Pkm</title>
 	
 	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="libs/D3/d3.min.js"></script>	
@@ -17,7 +17,7 @@
 
 <script type="text/javascript">
 	var chartType = window.location.search.substring(1).split("&")[0];
-	chartType = chartType?chartType:"BarChartNvd3";
+	chartType = chartType?chartType:"StackedBarChartNvd3";
     
 	require([chartType], function(TestChart) {         
         eJune = E(D("Month"), "June");
@@ -35,17 +35,24 @@
                 [
                     TCL([
                         T([eCar]), T([eBike]), T([eBoat])
-                    ]),
-                    TCL([
-                        T([eAugust])
                     ])
                 ]
             }),
+			axis1: A({
+                crosslists:
+                [
+                    TCL([
+                        T([eJune]),T([eAugust])
+                    ])
+                ]
+            }),					
             slicer: T([eCost]),
 			
 			Connection : LocalCubeConnection(HyperCube(SDTL([ 
 						 T([eAugust, eCar, eCost],440)
+						,T([eJune, eCar, eCost],222)
 						,T([eAugust, eBike, eCost],77)	  
+						,T([eJune, eBike, eCost],120)	 
 						,T([eAugust, eBoat, eCost],120)])))
 
         });		
