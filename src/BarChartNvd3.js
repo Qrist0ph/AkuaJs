@@ -1,4 +1,4 @@
-define(['Core/CoreBundle', 'nv.d3.min'], function () {
+define(['core/CoreBundle', 'nv.d3.min'], function () {
 
     _BarChartNvd3.prototype = new Apple();
     _BarChartNvd3.prototype.constructor = _BarChartNvd3;

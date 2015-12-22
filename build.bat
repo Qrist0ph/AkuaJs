@@ -21,6 +21,6 @@ java -jar ..\..\compiler.jar --js *.js --js_output_file tmp\AkuaCore.js
 del *.* /q
 move tmp\AkuaCore.js .
 rd tmp /s /q
-echo define(['underscore-min', 'linq.min', 'jshashtable-2.1', 'Core/AkuaCore'], function () {}); > CoreBundle.js
+echo define(['underscore-min', 'linq.min', 'jshashtable-2.1', 'core/AkuaCore'], function () {}); > CoreBundle.js
 
 cd ..\..

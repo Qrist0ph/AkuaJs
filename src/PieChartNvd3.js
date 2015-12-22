@@ -1,4 +1,4 @@
-define(['Core/CoreBundle',   'nv.d3.min'], function () {
+define(['core/CoreBundle',   'nv.d3.min'], function () {
     PieChartNvd3.prototype = new Apple();        // Here's where the inheritance occurs 
     PieChartNvd3.prototype.constructor = PieChartNvd3;       // Otherwise instances of Cat would have a constructor of Mammal 
     function PieChartNvd3(configObject) {
