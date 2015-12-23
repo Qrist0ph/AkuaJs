@@ -382,15 +382,54 @@ footer a:hover {
   display:inline-block; height: 200px; width:200px
 }
 
-.screen{
+.screen1{
     height: 200px; width:200px;  background: transparent url(../images/screen1.png)  no-repeat;display: block;
 }
+
+.screen2{
+    height: 200px; width:200px;  background: transparent url(../images/screen2.png)  no-repeat;display: block;
+}
+
+.screen3{
+    height: 200px; width:200px;  background: transparent url(../images/screen3.png)  no-repeat;display: block;
+}
+
+.screen4{
+    height: 200px; width:200px;  background: transparent url(../images/screen4.png)  no-repeat;display: block;
+}
+
+.screen5{
+    height: 200px; width:200px;  background: transparent url(../images/screen5.png)  no-repeat;display: block;
+}
+
+
+.screen6{
+    height: 200px; width:200px;  background: transparent url(../images/screen6.png)  no-repeat;display: block;
+}
+
+.screen7{
+    height: 200px; width:200px;  background: transparent url(../images/screen7.png)  no-repeat;display: block;
+}
+
+
+.screen8{
+    height: 200px; width:200px;  background: transparent url(../images/screen8.png)  no-repeat;display: block;
+}
+
+.screen9{
+    height: 200px; width:200px;  background: transparent url(../images/screen9.png)  no-repeat;display: block;
+}
+
+.screen10{
+    height: 200px; width:200px;  background: transparent url(../images/screen10.png)  no-repeat;display: block;
+}
+
 .outer{
      display: table-cell; padding: 10px ; 
 }
 
 .thumbText{
-    background: white !important;clear:left;float:left;margin-bottom: 0px
+    background: black;color:white !important;clear:left;float:left;margin-bottom: 0px
 }
 
 
