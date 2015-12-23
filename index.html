@@ -10,6 +10,10 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>    
+    <script data-main="https://rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/main.js" src="https://rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/require.js"></script>
+
     <title>AkuaJs by Qrist0ph</title>
   </head>
 
@@ -45,7 +49,29 @@
     <li>Free for non commercial usage and during developemnt</li>
     
 </ul>
-
+ <hr>
+  <h3><a class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is so awesome about AkuaJs</h3>
+  AkuaJs has its own built in analytical engine that makes data aggregation super easy and super fast. Hit F12 and try for yourself:
+<pre><code class="javascript">
+ require(["core/AkuaCore"], function() {    
+   eAugust = E(D("Month"), "August");
+   eBike = E(D("Product"), "Bike");
+   eCost = E(D("Measure"), "Costs");
+   eCar = E(D("Product"), "Car");
+  
+   cube = HyperCube(SDTL([ 
+                         T([eAugust, eCar, eCost],440)
+                        ,T([eAugust, eBike, eCost],77)    ]));
+   
+   //Query the cube                     
+   console.log(cube.get(T([eAugust,  eCost])))                     
+   
+   // Use And() concatenation to query the cube
+   console.log(cube.get( T([eAugust]).And(  T([eCost]) )))
+  });     
+</code></pre>
+ <hr>
+ <h3>Inculded Visualizations</h3>
  <section id="egal" class="clearfix">
      
      <div>
