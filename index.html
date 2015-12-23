@@ -27,8 +27,7 @@
         </header>
 
         <section id="downloads" class="clearfix">
-          <a href="https://github.com/Qrist0ph/AkuaJs/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/Qrist0ph/AkuaJs/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+        
           <a href="https://github.com/Qrist0ph/AkuaJs" id="view-on-github" class="button"><span>View on GitHub</span></a>
         </section>
 
@@ -195,10 +194,59 @@
      
      
         </section>
+<hr>
+<h3>Using AkuaJs</h3>
+Add dependencies to the head section of your main html:
+<pre><code class="javascript">
+ &lt;meta charset=&quot;utf-8&quot;&gt;  &lt;!-- it's important for d3.js --&gt;
+ &lt;script src=&quot;https://code.jquery.com/jquery-1.11.3.min.js&quot;&gt;&lt;/script&gt;
+ &lt;script src=&quot;https://rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/D3/d3.min.js&quot;&gt;&lt;/script&gt;
+ &lt;script data-main=&quot;https://rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/main.js&quot; src=&quot;https://rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/require.js&quot;&gt;&lt;/script&gt;
+ &lt;link rel=&quot;stylesheet&quot; href=&quot;https://rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/nvd3/nv.d3.min.css&quot; type=&quot;text/css&quot; /&gt;
+</code></pre> 
+   
+Use it like that:   
+   <pre><code class="html">
 
+    require(["BarChartNvd3"], function(TestChart) {
+        eJune = E(D("Month"), "June");
+        eAugust = E(D("Month"), "August");
+        ePoland = E(D("Country"), "Poland");        
+        eCar = E(D("Product"), "Car");
+        eBike = E(D("Product"), "Bike");
+        eBoat = E(D("Product"), "Boat");
+        eCost = E(D("Measure"), "Costs");
+        eRevenue = E(D("Measure"), "Revenue");
 
+        barchart = TestChart({
+            axis0: A({
+                crosslists:
+                [
+                    TCL([
+                        T([eCar]), T([eBike]), T([eBoat])
+                    ]),
+                    TCL([
+                        T([eAugust])
+                    ])
+                ]
+            }),
+            slicer: T([eCost]),
 
+            Connection : LocalCubeConnection(HyperCube(SDTL([ 
+                         T([eAugust, eCar, eCost],440)
+                        ,T([eAugust, eBike, eCost],77)    
+                        ,T([eAugust, eBoat, eCost],120)])))
+
+        });
+
+        barchart.getViewCaller(jQuery("#center"));
+    });
+
+    </code></pre>      
+       
 <h3>
+    
+    
         </section>
 
         <footer>
