@@ -15,7 +15,7 @@ Add dependencies to the <head> section of your main html:
 ```
 
 ## Quick Start 
-[Live Demo](http://qrist0ph.github.io/AkuaJs/example.html).
+[Live Demo](http://qrist0ph.github.io/AkuaJs/exampleCDN.html).
 ```html
 <!DOCTYPE html>
 <html>
