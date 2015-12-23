@@ -375,5 +375,22 @@ footer a:hover {
 
 
 #screen1 span {
-  background: transparent url(../images/screen1.png) 20px 50% no-repeat;display:inline-block; height: 200px; width:200px
+  background: transparent url(../images/screen1.png) no-repeat;display:inline-block; height: 200px; width:200px
 }
+
+#screen2 span {
+  display:inline-block; height: 200px; width:200px
+}
+
+.screen{
+    height: 200px; width:200px;  background: transparent url(../images/screen1.png)  no-repeat;display: block;
+}
+.outer{
+     display: table-cell; padding: 10px ; 
+}
+
+.thumbText{
+    background: white !important;clear:left;float:left;margin-bottom: 0px
+}
+
+
