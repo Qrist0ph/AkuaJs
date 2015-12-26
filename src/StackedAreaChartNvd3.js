@@ -9,6 +9,7 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
         this.height = configObject.height ? configObject.height : 400;
         this.showLegend = configObject.showLegend != null ? configObject.showLegend : true;
         this.barAxis = this.axis0.Tuples().ToArray();
+        this.style = configObject.style ? configObject.style : 'stream-center';
     }
 
     _StackedAreaChartNvd3.prototype.getView = function () {
@@ -30,8 +31,8 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
                   //.transitionDuration(500)
                   .showControls(false)       //Allow user to choose 'Stacked', 'Stream', 'Expanded' mode.
                   .clipEdge(true)
-                    .style('stream-center')
-                   .showLegend(me.showLegend);
+                  .style(me.style)
+                  .showLegend(me.showLegend);
 
         ;
 
