@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <title>Ext.Panel</title>
-    <link rel="stylesheet" href="..src/ibs/nvd3/nv.d3.min.css" type="text/css" />
+    <link rel="stylesheet" href="../src/libs/nvd3/nv.d3.min.css" type="text/css" />
 	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="../src/libs/D3/d3.min.js"></script>
   <script data-main="../src/main" src="../src/libs/require.js"></script>
@@ -12,15 +12,20 @@
 </head>
 <body>
     <div id="center">
+        <ul></ul>
     </div>
     
+    <div id="chart">
+        <svg></svg>
+    </div>
     
 
     <script type="text/javascript">
-        require(["StackedBarChartNvd3"], function (BarChartNvd3) {
+        require(["StackedAreaChartNvd3"], function (BarChartNvd3) {
 
-            eJuni = E(D("monat"), "juniii");
-            eAugust = E(D("monat"), "Augsut");
+            eJuni = E(D("monat"), 1030766400000);
+            eAugust = E(D("monat"), 1038632400000);
+            eSeptember = E(D("monat"), 1039732400000);
 
             ePolen = E(D("land"), "polen");
             eAuto = E(D("produkt"), "auto");
@@ -45,7 +50,7 @@
                     crosslists:
                     [
                         TCL([
-                            T([eAugust]), T([eJuni])
+                            T([eJuni]), T([eAugust]), T([eSeptember])
                         ])
                     ]
                 }),
@@ -54,8 +59,10 @@
                 Connection: LocalCubeConnection(HyperCube(SDTL([
                             T([eAugust, eAuto, eCost], 440), T([eAugust, eFahrrad, eCost], 77)
                             , T([eAugust, eBoot, eCost], 120),
-                            T([eJuni, eAuto, eCost], 440), T([eJuni, eFahrrad, eCost], 77)
-                            , T([eJuni, eBoot, eCost], 120)
+                            T([eJuni, eAuto, eCost], 240), T([eJuni, eFahrrad, eCost], 77)
+                            , T([eJuni, eBoot, eCost], 120),
+                             T([eSeptember, eAuto, eCost], 240), T([eSeptember, eFahrrad, eCost], 77)
+                            , T([eSeptember, eBoot, eCost], 320)
                 ])))
 
             });
