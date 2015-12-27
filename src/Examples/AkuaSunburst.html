@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <title>TestDriver1Axis0Pkm</title>
 	<script src="../Libs/D3/d3.min.js"></script>
+     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 	<script data-main="../main" src="../Libs/require.js"></script>
 	<link rel="stylesheet" href="../Libs/nvd3/nv.d3.min.css" type="text/css" />   
@@ -79,7 +80,6 @@
 <script type="text/javascript">
     require([ "Sunburst"], function(TestChart) {
 
-        var foo = { foo: "polen" };
         eJune = E(D("Month"), "June");
         eAugust = E(D("Month"), "August");
 
@@ -97,14 +97,16 @@
                 crosslists:
                 [
                     TCL([
-                        T([eCar, eAugust]), T([eBike]), T([eBoat])
+                        T([eCar, eAugust]), T([eBoat, eAugust]), T([eBike, eAugust]), T([eBike]), T([eBoat])
                     ])
                 ]
             }),
             slicer: T([eCost]),
 			
             Connection: LocalCubeConnection(DumbTupleStore(SDTL([
-						 T([eAugust, eCar, eCost],440)
+						 T([eAugust, eCar, eCost],440),
+                         T([eAugust, eBoat, eCost],240),
+                         T([eAugust, eBike, eCost],140)
 						,T([ eBike, eCost],77)	  
 						,T([ eBoat, eCost],120)])))
 
