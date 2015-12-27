@@ -28,18 +28,20 @@ define(['Core/CoreBundle', 'nv.d3.min'], function () {
             '#' + me.divid + ' .legend {  padding: 10px 0 0 3px;} ' +
             '#' + me.divid + ' .sequence text, #' + me.divid + ' .legend text {  font-weight: 600;  fill: #fff;} ' +
             '#' + me.divid + ' .chart {  position: relative;} ' +
+            '#' + me.divid + ' svg {  display: block;margin:auto} ' +
             '#' + me.divid + ' .chart path {  stroke: #fff;} ' +
             '#' + me.divid + ' .explanation {  position: absolute;  top: ' + top + 'px;   text-align: center;  color: #666; width: 100% ;pointer-events:none} ' +
-            '#' + me.divid + ' .percentage {  font-size: 2.5em; }	</style>';
+            '#' + me.divid + ' .percentage {  font-size: 2.5em;width:100% }	</style>';
 
-        var content = css + '<div class="outer"><div class="middle"><div class="inner">' +
+        var content = css + '<div class="outer">' +
+            '<div style="position:absolute;text-align:center;width:100%"></div>' +
             '<div class="sequence"></div>' +
             '<div class="chart" >' +
-            '<div class="explanation" style="visibility: hidden;">' +
+            '<div class="explanation" style="visibility: hidden;"> ' +
             '<span class="percentage" ></span>' +
             '<br/>' +
             ' </div>' +
-            '</div></div></div></div>';
+            '</div></div>';
         this.view = $('<div id="' + me.divid + '"/>').html(content);
 
         return this.view;
@@ -73,6 +75,7 @@ define(['Core/CoreBundle', 'nv.d3.min'], function () {
         //var vis = d3.select("#" + me.divid + " .chart").append("svg:svg")
         var vis = d3.select("#" + me.divid + " .chart").append("svg:svg")
             .attr("width", width)
+            // .attr("width", '100%')
             .attr("height", height)
             .append("svg:g")
             .attr("class", "container")
@@ -143,7 +146,6 @@ define(['Core/CoreBundle', 'nv.d3.min'], function () {
 
         // Fade all but the current sequence, and show it in the breadcrumb trail.
         function mouseover(d) {
-
             var percentage = (100 * d.value / (totalSize + me.schulden)).toPrecision(3);
             var percentageString = percentage + "%";
             if (percentage < 0.1) {
