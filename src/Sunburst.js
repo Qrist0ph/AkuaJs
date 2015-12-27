@@ -1,4 +1,4 @@
-define(['core/CoreBundle', 'nv.d3.min'], function () {
+define(['Core/CoreBundle', 'nv.d3.min'], function () {
 
     _Sunburst.prototype = new Apple();
     _Sunburst.prototype.constructor = _Sunburst;
@@ -21,7 +21,7 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
         var width = this.viewFrame.parent().width() - 50;
         var css = '<style>	 #' + me.divid + ' .outer { display: table; height: 100%; width: 100%; }' +
             ' #' + me.divid + ' .middle { display: table-cell; vertical-align: middle; } ' +
-            '#' + me.divid + ' .inner { margin-left: auto; margin-right: auto; width:' + width + 'px  } ' +
+            '#' + me.divid + ' .inner { margin-left: auto; margin-right: auto; } ' +
             '  #' + me.divid + ' .mainn {  float: left;  }' +
             ' #' + me.divid + ' sidebar {  float: right;  width: 100px;}' +
             ' #' + me.divid + ' sequence {  width: 600px;  height: 70px;} ' +
@@ -32,11 +32,11 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
             '#' + me.divid + ' .explanation {  position: absolute;  top: ' + top + 'px;   text-align: center;  color: #666; width: 100% ;pointer-events:none} ' +
             '#' + me.divid + ' .percentage {  font-size: 2.5em; }	</style>';
 
-        var content = css + '<div class="mainn outer"><div class="middle"><div class="inner">' +
+        var content = css + '<div class="outer"><div class="middle"><div class="inner">' +
             '<div class="sequence"></div>' +
             '<div class="chart" >' +
             '<div class="explanation" style="visibility: hidden;">' +
-            '<span class="percentage" style="text-align:center"></span>' +
+            '<span class="percentage" ></span>' +
             '<br/>' +
             ' </div>' +
             '</div></div></div></div>';
@@ -255,7 +255,7 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
                 .attr("dy", "0.35em")
                 .attr("text-anchor", "middle")
                 .text(function (d) {
-                    //speziell für Stockato
+                    //speziell fï¿½r Stockato
                     //return d.name;
                     var parts = d.name.split("-");
                     return parts[parts.length - 1];
