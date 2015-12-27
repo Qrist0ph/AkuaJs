@@ -19,10 +19,8 @@ define(['Core/CoreBundle', 'nv.d3.min'], function () {
         var me = this;
         var top = me.height / 2 - 50;
         var width = this.viewFrame.parent().width() - 50;
-        var css = '<style>	 #' + me.divid + ' .outer { display: table; height: 100%; width: 100%; }' +
-            ' #' + me.divid + ' .middle { display: table-cell; vertical-align: middle; } ' +
-            '#' + me.divid + ' .inner { margin-left: auto; margin-right: auto; } ' +
-            '  #' + me.divid + ' .mainn {  float: left;  }' +
+        var css = '<style>	' +
+           
             ' #' + me.divid + ' sidebar {  float: right;  width: 100px;}' +
             ' #' + me.divid + ' sequence {  width: 600px;  height: 70px;} ' +
             '#' + me.divid + ' .legend {  padding: 10px 0 0 3px;} ' +
@@ -33,8 +31,7 @@ define(['Core/CoreBundle', 'nv.d3.min'], function () {
             '#' + me.divid + ' .explanation {  position: absolute;  top: ' + top + 'px;   text-align: center;  color: #666; width: 100% ;pointer-events:none} ' +
             '#' + me.divid + ' .percentage {  font-size: 2.5em;width:100% }	</style>';
 
-        var content = css + '<div class="outer">' +
-            '<div style="position:absolute;text-align:center;width:100%"></div>' +
+        var content = css + '<div >' +
             '<div class="sequence"></div>' +
             '<div class="chart" >' +
             '<div class="explanation" style="visibility: hidden;"> ' +
