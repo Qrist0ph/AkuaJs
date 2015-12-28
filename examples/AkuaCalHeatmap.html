@@ -2,24 +2,18 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <title>TestDriver1Axis0Pkm</title>
+    <title>Akua CalHeatmap</title>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="../Libs/D3/d3.min.js"></script>
-    <script src="../Libs/CalHeatmap/cal-heatmap.min.js"></script>
-    <script data-main="../main" src="../Libs/require.js"></script>
-    <link rel="stylesheet" href="../Libs/nvd3/nv.d3.css" type="text/css" />
-    <link rel="stylesheet" href="../Libs/CalHeatmap/cal-heatmap.css" type="text/css" />
+    <script src="../src/libs/D3/d3.min.js"></script>
+    <script data-main="../src/main" src="../src/libs/require.js"></script>
+    <link rel="stylesheet" href="../src/libs/nvd3/nv.d3.css" type="text/css" />
+    <link rel="stylesheet" href="../src/libs/CalHeatmap/cal-heatmap.css" type="text/css" />
 </head>
 <body>
-    <div style="background-color:#99FFFF">
-        <h2>Filter VisualizationElement </h2>
-        <div id="chart1" style="margin:20px"></div>
-    </div>
+   
 
-    <div style="background-color:#CCFF00">
-        <h2>Display VisualizationElement </h2>
-        <div id="chart2" style="margin:20px"></div>
-    </div>
+    
+        <div id="chart" style="margin:20px"></div>
 </body>
 
 <script type="text/javascript">
@@ -38,7 +32,7 @@
                     ])
                 ]
             }),
-            //slicer: T([eCost]),
+         
 
             Connection: LocalCubeConnection(HyperCube(SDTL([
                T([ eTimestamp1], 0.4),
@@ -46,7 +40,7 @@
                T([ eTimestamp3], 1.7)
 
             ]))),
-            // reactOnFilter: true,
+           
             height:388
             ,locale:'german'
             ,minDate:new Date(2015, 6, 1)
@@ -55,14 +49,7 @@
 
         });
 
-
-        /*
-            No need to change something here
-        */
-      
-        barchart.getViewCaller(jQuery("#chart2"));
-
-        console.log(barchart.GetVisualGeruestQuery().ToAkuaDsl());
+        barchart.getViewCaller(jQuery("#chart"));
     });
 </script>
 </html>
