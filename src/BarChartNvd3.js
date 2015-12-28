@@ -47,19 +47,20 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
             if (me.actAsFilter)
                 me.chart.discretebar.dispatch.on('elementClick', function (e) {
 
-                    me.selected = e.point.key;
+                    me.selected = e.data.key;
 
                     //reset previously selected bar
                     if (me.selectedBar)
                         me.selectedBar.style("fill", me.selectedStyle);
 
-                    me.selectedBar = d3.select(e.e.target);
-                    me.selectedStyle = me.selectedBar.style()[0][0].style.fill;
-
-                    me.selectedBar.style("fill", "#0ff");
+//                     me.selectedBar = d3.select(e.e.target);
+//                     me.selectedStyle = me.selectedBar.style()[0][0].style.fill;
+// 
+//                     me.selectedBar.style("fill", "#0ff");
                     if (me.parent) me.parent.onSelectionChanged(me);
                 });
             nv.utils.windowResize(me.chart.update);
+           
             return me.chart;
         });
 
