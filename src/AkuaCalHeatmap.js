@@ -1,4 +1,4 @@
-define(['Core/CoreBundle', 'cal-heatmap'], function () {
+define(['core/CoreBundle', 'cal-heatmap'], function () {
 
     _AkuaCalHeatmap.prototype = new Apple();
     _AkuaCalHeatmap.prototype.constructor = _AkuaCalHeatmap;
