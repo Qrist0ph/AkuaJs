@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>AkuaJs Sample</title>
+ 
+    
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>       
+    <script src="https://rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/D3/d3.min.js"></script>
+    
+    <script src="https://rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/CalHeatmap/cal-heatmap.min.js"></script>
+    <link rel="stylesheet" href="https://rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/CalHeatmap/cal-heatmap.css" type="text/css" />   
+       
+       
+    <script data-main="https://rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/main.js" src="https://rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/require.js"></script>
+    <link rel="stylesheet" href="https://rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/nvd3/nv.d3.min.css" type="text/css" />
+    
+     
+</head>
+<body>
+    <div id="center"></div>
+</body>
+
+<script type="text/javascript">
+       require(["AkuaCalHeatmap" ], function ( TestChart) {
+      
+        eTimestamp1 = E(D("Bezirk"), "1435734000");
+        eTimestamp2 = E(D("Bezirk"), "1435820400");
+        eTimestamp3 = E(D("Bezirk"), "1435906800");
+     
+        var barchart = TestChart({
+            axis0: A({
+                crosslists:
+                [
+                    TCL([
+                        T([eTimestamp1]), T([eTimestamp2]), T([eTimestamp3])
+                    ])
+                ]
+            }),
+         
+
+            Connection: LocalCubeConnection(HyperCube(SDTL([
+               T([ eTimestamp1], 0.4),
+               T([ eTimestamp2], -2.3),
+               T([ eTimestamp3], 1.7)
+
+            ]))),
+            // reactOnFilter: true,
+            height:388
+            ,locale:'german'
+            ,minDate:new Date(2015, 6, 1)
+            ,maxDate:new Date(2015, 10, 1)
+            ,range:3
+
+        });
+
+        barchart.getViewCaller(jQuery("#center"));
+    });
+</script>
+</html>
