@@ -1,4 +1,4 @@
-
+define(['core/CoreBundle'], function () {
 GoogleHeatmap.prototype = new Apple();
 GoogleHeatmap.prototype.constructor = GoogleHeatmap;
 function GoogleHeatmap(configObject) {
@@ -83,3 +83,5 @@ GoogleHeatmap.prototype.selectionCallback = function () {
     });
     alert(str);
 };
+   return function (configObject) { return new GoogleHeatmap.prototype.constructor(configObject); };
+});
