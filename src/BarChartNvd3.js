@@ -6,8 +6,7 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
         Apple.call(this, configObject);
         this.axis0 = configObject.axis0;
         this.height = configObject.height ? configObject.height : 400;
-        this.captionLength = configObject.captionLength;
-        this.numberFormat = configObject.numberFormat ? configObject.numberFormat : [2, ',', '.', ''];
+        this.captionLength = configObject.captionLength;       
         this.xAxisFormat = configObject.xAxisFormat ? configObject.xAxisFormat : function (d, i) { return truncateString(d, this.captionLength).replace("&hellip;", "..."); };
     }
 
@@ -31,7 +30,7 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
                 .tooltipContent(function (key) {
 
                     return '<h3>' + key.data.key.ToCaption() + '</h3>' +
-                        '<p>' + key.data.y.formatNumber(me.numberFormat) + '</p>';
+                     '<p>' + d3.locale(me.locale).numberFormat(me.numberFormat)(key.data.y) + '</p>';                       
                 })
                 .color(me.colors);
 

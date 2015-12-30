@@ -26,3 +26,8 @@ rd tmp /s /q
 echo define(['underscore-min', 'linq.min', 'jshashtable-2.1', 'core/AkuaCore'], function () {}); > CoreBundle.js
 
 cd ..\..\..
+
+cd dist
+cd plain
+7z a -tzip -r ..\..\bin\AkuaJs.min.zip *.*
+cd ..\..
