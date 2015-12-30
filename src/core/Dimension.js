@@ -5,7 +5,8 @@ function _D(caption) {
 
 
 _D.prototype.equals = function (obj) {
-    return (obj instanceof _D) && (obj.Caption === this.Caption)
+    return this.ToAkuaDsl && obj.ToAkuaDsl && this.ToAkuaDsl() == obj.ToAkuaDsl();
+    // return (obj instanceof _D) && (obj.Caption === this.Caption)
 };
 
 _D.prototype.compareTo = function (obj) {

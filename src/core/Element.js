@@ -15,6 +15,7 @@ _E.prototype.toCaption = function () {
 }
 */
 _E.prototype.equals = function (obj) {
+     return this.ToAkuaDsl && obj.ToAkuaDsl && this.ToAkuaDsl() == obj.ToAkuaDsl();
     return (obj instanceof _E) && (obj.Dimension.equals(this.Dimension)) &&
 	obj.toString() === this.toString();
 	//(obj.Caption === this.Caption)

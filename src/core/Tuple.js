@@ -51,7 +51,8 @@ _T.prototype.ToCaption = function () {
 }
 
 _T.prototype.equals = function (obj) {
-    return (obj instanceof _T) && arraysEqualHash(this.elements, obj.elements);
+    // return  (obj instanceof _T) &&  arraysEqualHash(this.elements, obj.elements);
+    return  arraysEqualHash(this.elements, obj.elements);
 };
 
 _T.prototype.And = function (otherTuple) {
