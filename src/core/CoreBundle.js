@@ -1,6 +1,6 @@
-define([ 'underscore-min', 'linq.min', 'jshashtable-2.1', 'Core/Toolkit', 'Core/DSL', 'Core/Element', 'Core/Dimension', 'Core/VisEl', 'Core/Tuple', 'Core/Domain',
-		'Core/Axis', 'Core/VisualGeruestQuery',
-		'Core/SameDomainTupleList', 'Core/HyperCube', 'Core/MultiTupleFilter', 'Core/DataProvider', 'Core/Crosslist','Core/DumbTupleStore'], function () {
+define([ 'underscore-min', 'linq.min', 'jshashtable-2.1', 'core/Toolkit', 'core/DSL', 'core/Element', 'core/Dimension', 'core/VisEl', 'core/Tuple', 'core/Domain',
+		'core/Axis', 'core/VisualGeruestQuery',
+		'core/SameDomainTupleList', 'core/HyperCube', 'core/MultiTupleFilter', 'core/DataProvider', 'core/Crosslist','core/DumbTupleStore'], function () {
 		    //alert("core laoded");
 		}
 );
