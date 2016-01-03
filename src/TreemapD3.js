@@ -5,12 +5,12 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
         Apple.call(this, configObject);
 
         this.axis0 = configObject.axis0;
-        //this.slicer = configObject.slicer ? configObject.slicer : T([]);
+        
         this.size = configObject.pkm0 ? configObject.pkm0 : T([]);
         this.color = configObject.pkm1 ? configObject.pkm1 : T([]);
         this.divid = guid();
         this.height = configObject.height ? configObject.height : 400;
-        this.numberFormat = configObject.numberFormat ? configObject.numberFormat : [2, ',', '.', ''];
+       
     }
 
 
@@ -68,7 +68,8 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
          .on("mouseover", function (d) {
 
              if (!d.size) return;
-             tooltip.html(d.name + " Value " + d.size.formatNumber(me.numberFormat) + " Gewinn:" + d.pkm1.formatNumber(me.numberFormat));
+             tooltip.html(d.name + " Value: " + d3.locale(me.locale).numberFormat(me.numberFormat)(d.size)+ " - Value 2:" 
+             + d3.locale(me.locale).numberFormat(me.numberFormat)(d.pkm1));
              tooltip.style("visibility", "visible");
              this.style.cursor = "hand";
          }).on("mousemove", function () {
@@ -78,12 +79,7 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
          })
           .on("mouseout", function () {
               tooltip.style("visibility", "hidden");
-          })
-         .on("click", function (d) {
-
-             if (!d.size) return;
-             window.location.href = '/AssetDetails/Index/' + d.wkn;            
-         });
+          });
 
         function position() {
             this.style("left", function (d) { return d.x + "px"; })
@@ -111,12 +107,7 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
             var colorVal = value / max;
             var color = colorVal < 0 ? ColorLuminance("FF0000", 1 + colorVal) : ColorLuminance("00FF00", 1 - colorVal);
 
-            dataArray.push({
-                name: barAxis[i].ToCaption().split("#")[1],
-                size: this.getValue(barAxis[i].And(this.size)),
-                color: color, pkm1: value,
-                wkn: barAxis[i].ToCaption().split("#")[0]
-            });
+            dataArray.push({ name: barAxis[i].ToCaption(), size: this.getValue(barAxis[i].And(this.size)), color: color, pkm1: value });
         }
 
         return {

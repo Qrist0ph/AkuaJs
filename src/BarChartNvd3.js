@@ -12,8 +12,7 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
 
     _BarChartNvd3.prototype.getView = function () {
         var me = this;
-        this.view = $('<div id="' + me.divid + '">  <svg style="height: ' + me.height + 'px;" class="nvd3"></svg></div> ');
-        //this.view = $('<div id="' + me.divid + '">  <svg style="height: 400px;" class="nvd3"></svg></div> ');
+        this.view = $('<div id="' + me.divid + '">  <svg style="height: ' + me.height + 'px;" class="nvd3"></svg></div> ');      
         return this.view;
     };
 
