@@ -6,13 +6,13 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
         Apple.call(this, configObject);
         this.axis0 = configObject.axis0;
         this.height = configObject.height ? configObject.height : 400;
-        this.captionLength = configObject.captionLength;       
+        this.captionLength = configObject.captionLength;
         this.xAxisFormat = configObject.xAxisFormat ? configObject.xAxisFormat : function (d, i) { return truncateString(d, this.captionLength).replace("&hellip;", "..."); };
     }
 
     _BarChartNvd3.prototype.getView = function () {
         var me = this;
-        this.view = $('<div id="' + me.divid + '">  <svg style="height: ' + me.height + 'px;" class="nvd3"></svg></div> ');      
+        this.view = $('<div id="' + me.divid + '">  <svg style="height: ' + me.height + 'px;" class="nvd3"></svg></div> ');
         return this.view;
     };
 
@@ -29,7 +29,7 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
                 .tooltipContent(function (key) {
 
                     return '<h3>' + key.data.key.ToCaption() + '</h3>' +
-                     '<p>' + d3.locale(me.locale).numberFormat(me.numberFormat)(key.data.y) + '</p>';                       
+                     '<p>' + d3.locale(me.locale).numberFormat(me.numberFormat)(key.data.y) + '</p>';
                 })
                 .color(me.colors);
 
@@ -51,14 +51,14 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
                     if (me.selectedBar)
                         me.selectedBar.style("fill", me.selectedStyle);
 
-//                     me.selectedBar = d3.select(e.e.target);
-//                     me.selectedStyle = me.selectedBar.style()[0][0].style.fill;
-// 
-//                     me.selectedBar.style("fill", "#0ff");
+                    //                     me.selectedBar = d3.select(e.e.target);
+                    //                     me.selectedStyle = me.selectedBar.style()[0][0].style.fill;
+                    // 
+                    //                     me.selectedBar.style("fill", "#0ff");
                     if (me.parent) me.parent.onSelectionChanged(me);
                 });
             nv.utils.windowResize(me.chart.update);
-           
+
             return me.chart;
         });
 
