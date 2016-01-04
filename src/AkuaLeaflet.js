@@ -5,7 +5,7 @@ define(['core/CoreBundle', "leaflet"], function () {
     function _LeafletMap(configObject) {
         Apple.call(this, configObject);
         this.axis0 = configObject.axis0;
-        this.height = configObject.height ? configObject.height : 400;
+        this.height = configObject.height ? configObject.height : 450;
         this.InfoMessage = configObject.InfoMessage ? configObject.InfoMessage : "Info:";
         this.Unit = configObject.Unit ? configObject.Unit : "";
         this.mapCenter = configObject.mapCenter ? configObject.mapCenter : [52.8, 13];
@@ -16,8 +16,14 @@ define(['core/CoreBundle', "leaflet"], function () {
 
     _LeafletMap.prototype.getView = function () {
         var me = this;
-        this.view = $('<div id="' + me.divid + '" style="height:' + me.height + 'px;"  > ' + me.divid + '</div> ');
-
+		 var css = '<style>	' +           
+            '#' + me.divid + '.info {padding: 6px 8px;font: 14px/16px Arial, Helvetica, sans-serif;background: white;background: rgba(255,255,255,0.8);box-shadow: 0 0 15px rgba(0,0,0,0.2);border-radius: 5px;}' +       
+            '#' + me.divid + '.info h4 {margin: 0 0 5px;color: #777;}' +
+			'#' + me.divid + '.legend {text-align: left;line-height: 18px;color: #555;}'+
+			'#' + me.divid + '.legend i {width: 18px;height: 18px;float: left;margin-right: 8px;opacity: 0.7;}</style>	';
+			
+		this.view = $('<div id="' + me.divid + '"/>').html(css+ '<div style="height:' + me.height + 'px;"  > ' + me.divid + '</div> ');	
+      
         return this.view;
     };
 
