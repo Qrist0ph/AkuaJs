@@ -11,11 +11,7 @@
 	<script  src="Leaflet/berliner-bezirke.geojson"></script>
 
     <style>
-        #map {
-            width: 800px;
-            height: 500px;
-        }
-
+        
         .info {
             padding: 6px 8px;
             font: 14px/16px Arial, Helvetica, sans-serif;
@@ -83,7 +79,11 @@
 				T([eBezirkPankow], 33),
 				T([eBezirkFriedrichshain], 55)
 				
-            ])))
+            ]))),
+			mapCenter : [52.8, 13],
+			zoom : 9,
+			geoJson : geojson,
+			click: function(t,v){alert(t);}
 
 
         });
