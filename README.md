@@ -9,9 +9,9 @@ Add dependencies to the <head> section of your main html:
 ```html
  <meta charset="utf-8">  <!-- it's important for d3.js -->
  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
- <script src="https://rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/D3/d3.min.js"></script>
- <script data-main="https://rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/main.js" src="https://rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/require.js"></script>
- <link rel="stylesheet" href="https://rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/nvd3/nv.d3.min.css" type="text/css" />
+ <script src="https://cdn.rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/D3/d3.min.js"></script>
+ <script data-main="https://cdn.rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/main.js" src="https://cdn.rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/require.js"></script>
+ <link rel="stylesheet" href="https://cdn.rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/nvd3/nv.d3.min.css" type="text/css" />
 ```
 
 ## Quick Start 
@@ -23,9 +23,9 @@ Add dependencies to the <head> section of your main html:
     <meta http-equiv="Content-Type" content="text/html;">
     <title>AkuaJs Sample</title>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/D3/d3.min.js"></script>
-    <script data-main="https://rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/main.js" src="https://rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/require.js"></script>
-    <link rel="stylesheet" href="https://rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/nvd3/nv.d3.min.css" type="text/css" />    
+    <script src="https://cdn.rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/D3/d3.min.js"></script>
+    <script data-main="https://cdn.rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/main.js" src="https://cdn.rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/require.js"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/nvd3/nv.d3.min.css" type="text/css" />    
 </head>
 <body>
     <div id="center"></div>
