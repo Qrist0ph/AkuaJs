@@ -17,14 +17,15 @@
 </head>
 <body>
 <div id="heatmapArea"></div>
-<script type="text/javascript" src="Libs/Heatmap/heatmap.js"></script>
-<script type="text/javascript" src="Libs/Heatmap/heatmap-gmaps.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/pa7/heatmap.js/v2.0/build/heatmap.min.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/pa7/heatmap.js/develop/plugins/gmaps-heatmap.js"></script>
+
 <script type="text/javascript">
 
 var map;
 var heatmap; 
 
-window.onload = function(){
+<!-- window.onload = function(){ -->
 
 	var myLatlng = new google.maps.LatLng(48.3333, 16.35);
 	// sorry - this demo is a beta
@@ -52,9 +53,9 @@ window.onload = function(){
     	
 	// this is important, because if you set the data set too early, the latlng/pixel projection doesn't work
 	google.maps.event.addListenerOnce(map, "idle", function(){
-		heatmap.setDataSet(testData);
+		heatmap.setData(testData);
 	});
-};
+<!-- }; -->
 
 </script>
 </body>

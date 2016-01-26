@@ -1,4 +1,4 @@
-define(['core/CoreBundle'], function () {
+define(['core/CoreBundle','heatmap.js'], function () {
 GoogleHeatmap.prototype = new Apple();
 GoogleHeatmap.prototype.constructor = GoogleHeatmap;
 function GoogleHeatmap(configObject) {
@@ -18,9 +18,7 @@ GoogleHeatmap.prototype.getView = function () {
 };
 
 GoogleHeatmap.prototype.render = function () {
-    var me = this;
-
-   var myLatlng = new google.maps.LatLng(48.3333, 16.35);
+ var myLatlng = new google.maps.LatLng(48.3333, 16.35);
 	// sorry - this demo is a beta
 	// there is lots of work todo
 	// but I don't have enough time for eg redrawing on dragrelease right now
@@ -36,7 +34,7 @@ GoogleHeatmap.prototype.render = function () {
 	  scaleControl: true,
 	  disableDoubleClickZoom: false
 	};
-	map = new google.maps.Map(document.getElementById(me.divid ), myOptions);	
+	map = new google.maps.Map(document.getElementById("heatmapArea"), myOptions);	
 	heatmap = new HeatmapOverlay(map, {"radius":15, "visible":true, "opacity":60});
 	
 	var testData={
@@ -46,7 +44,7 @@ GoogleHeatmap.prototype.render = function () {
     	
 	// this is important, because if you set the data set too early, the latlng/pixel projection doesn't work
 	google.maps.event.addListenerOnce(map, "idle", function(){
-		heatmap.setDataSet(testData);
+		 heatmap.setData(testData);
 	});
 
 };
