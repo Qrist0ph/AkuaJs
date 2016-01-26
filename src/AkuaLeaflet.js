@@ -17,12 +17,12 @@ define(['core/CoreBundle', "leaflet"], function () {
     _LeafletMap.prototype.getView = function () {
         var me = this;
 		 var css = '<style>	' +           
-            '#' + me.divid + '.info {padding: 6px 8px;font: 14px/16px Arial, Helvetica, sans-serif;background: white;background: rgba(255,255,255,0.8);box-shadow: 0 0 15px rgba(0,0,0,0.2);border-radius: 5px;}' +       
-            '#' + me.divid + '.info h4 {margin: 0 0 5px;color: #777;}' +
-			'#' + me.divid + '.legend {text-align: left;line-height: 18px;color: #555;}'+
-			'#' + me.divid + '.legend i {width: 18px;height: 18px;float: left;margin-right: 8px;opacity: 0.7;}</style>	';
+            '#' + me.divid + ' .info {padding: 6px 8px;font: 14px/16px Arial, Helvetica, sans-serif;background: white;background: rgba(255,255,255,0.8);box-shadow: 0 0 15px rgba(0,0,0,0.2);border-radius: 5px;}' +       
+            '#' + me.divid + ' .info h4 {margin: 0 0 5px;color: #777;}' +
+			'#' + me.divid + ' .legend {text-align: left;line-height: 18px;color: #555;}'+
+			'#' + me.divid + ' .legend i {width: 18px;height: 18px;float: left;margin-right: 8px;opacity: 0.7;}</style>	';
 			
-		this.view = $('<div id="' + me.divid + '"/>').html(css+ '<div style="height:' + me.height + 'px;"  > ' + me.divid + '</div> ');	
+		this.view = $('<div id="' + me.divid + '" />').html(css+ '<div style="height:' + me.height + 'px;"  > ' + me.divid + '</div> ');	
       
         return this.view;
     };
@@ -33,7 +33,7 @@ define(['core/CoreBundle', "leaflet"], function () {
         if (!me.map) {           
 
             //me.map =  L.map(me.divid).setView([52.8, 13], 8);
-            me.map = L.map(me.view[0]).setView(me.mapCenter, me.zoom);
+            me.map = L.map(me.view[0].children[1]).setView(me.mapCenter, me.zoom);
             //var map = L.map('map').setView([37.8, -96], 4);
 
             /*
@@ -122,7 +122,7 @@ define(['core/CoreBundle', "leaflet"], function () {
 
         if (me.geojson) me.map.removeLayer(me.geojson);
         //Geojson decoden
-        //todo Logik für Färbung aus Treemap holen
+        //todo Logik fï¿½r Fï¿½rbung aus Treemap holen
         me.geojson = L.geoJson( this.geoJson, {
             style: function (feature) {
 
