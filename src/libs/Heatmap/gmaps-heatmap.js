@@ -67,7 +67,7 @@
 
   HeatmapOverlay.prototype.onAdd = function(){
     console.log(2);
-	var h337 = typeof require !== 'undefined' ? require('heatmap.js') : window.h337;
+	// var h337 = typeof require !== 'undefined' ? require('heatmap.js') : window.h337;
 	var h337 =  window.h337;
     var that = this;
 

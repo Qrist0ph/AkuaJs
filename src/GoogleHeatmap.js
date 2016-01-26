@@ -1,4 +1,4 @@
-define(['core/CoreBundle','heatmap.js'], function () {
+define(['core/CoreBundle'], function () {
 GoogleHeatmap.prototype = new Apple();
 GoogleHeatmap.prototype.constructor = GoogleHeatmap;
 function GoogleHeatmap(configObject) {
