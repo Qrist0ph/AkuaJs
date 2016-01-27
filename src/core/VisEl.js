@@ -45,6 +45,8 @@ function Apple(configObject) {
 
         this.colors = configObject.colors ? configObject.colors : ["#FFD700", "#F4A460", "#66CDAA", "#a173d1", "#DDA0DD", "#6A5ACD", "#A0522D"];
         this.colorDict = configObject.colorDict ? configObject.colorDict : {};
+        this.click = configObject.click;
+        this.writeTupleText = configObject.writeTupleText ? configObject.writeTupleText : function (t) { return t.ToCaption(); };
     }
 
     this.viewFrame = null;

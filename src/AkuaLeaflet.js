@@ -11,7 +11,7 @@ define(['core/CoreBundle', "leaflet"], function () {
         this.mapCenter = configObject.mapCenter ? configObject.mapCenter : [52.8, 13];
         this.zoom = configObject.zoom ? configObject.zoom : 8;
 		this.geoJson = configObject.geoJson;
-		this.click = configObject.click;
+		
     }
 
     _LeafletMap.prototype.getView = function () {
