@@ -6,45 +6,27 @@
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-
-
-
-<!-- <script type="text/javascript" src="https://cdn.rawgit.com/pa7/heatmap.js/v2.0/build/heatmap.min.js"></script> -->
-<!-- <script type="text/javascript" src="https://cdn.rawgit.com/pa7/heatmap.js/v1.0/src/heatmap.js"></script> -->
 <script type="text/javascript" src="../src/libs/heatmap/heatmap.min.js"></script>
 <script type="text/javascript" src="../src/libs/heatmap/gmaps-heatmap.js"></script>
 <script data-main="../src/main" src="../src/libs/require.js"></script>
 
-   <style>
-				#heatmapArea {
-				position:relative;
-				float:left;
-				width:800px;
-				height:600px;
-				border:1px dashed black;
-			}
-		</style>
+ 
 
 </head>
 <body>
-    das ist ein text
-    <div id="center">
-        <ul></ul>
-    </div>
-	
-	  <div id="heatmapArea"></div>
+    <div id="center"></div>
 </body>
 
 <script type="text/javascript">
 var map;
 var heatmap; 
  
-    require([ "GoogleHeatmap"], function(GoogleMap) {
+    require(["GeoHeatmapGoogle"], function(GoogleMap) {
 
-        ePoint1 = E(D("point"), { x: -25.363882,y:131.044922});
+        ePoint1 = E(D("point"), { lat: -25.363882,lng:131.044922});
 		eText1 = E(D("text"), "eine statdt");
 				
-		ePoint2 = E(D("point"), { x: -23.363882,y:131.044922});
+		ePoint2 = E(D("point"), { lat: -23.363882,lng:131.044922});
 		eText2 = E(D("text"), "eine zweite statdt");			
 		
       
@@ -66,12 +48,7 @@ var heatmap;
            
 
         });
-	
-		
-
         map.getViewCaller($("#center"));
-		
-		
     });
 </script>
 
