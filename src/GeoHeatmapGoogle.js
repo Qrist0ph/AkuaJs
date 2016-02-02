@@ -62,9 +62,21 @@ define(['core/CoreBundle'], function () {
             data: [{ lat: 10.5363, lng: -117.044, count: 100 }, { lat: 33.5608, lng: -117.24, count: 10 }, { lat: 38, lng: -97, count: 60 }, { lat: 38.9358, lng: -77.1621, count: 10 }]
         };
 
+		
+		var markersData = me.data();
+		  for (var i = 0; i < markersData.data.length; i++) {
+		  new google.maps.Marker({
+			position:  {lat:markersData.data[i].lat, lng: markersData.data[i].lng},
+			map: map,
+			title:markersData.data[i].key + ": "+ d3.locale(me.locale).numberFormat(me.numberFormat)(markersData.data[i].count)
+		});
+		  }
+		  
+  
+  
         // this is important, because if you set the data set too early, the latlng/pixel projection doesn't work
         google.maps.event.addListenerOnce(map, "idle", function () {
-            heatmap.setData(me.data());
+            heatmap.setData(markersData);
         });
 
     };
