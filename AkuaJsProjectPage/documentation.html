@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script data-main="https://cdn.rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/main.js" src="https://cdn.rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/require.js"></script>
+
+    <title>AkuaJs - Documentation</title>
+</head>
+
+<body>
+    <div id="container">
+        <div class="inner">
+
+            <header style="display: table-cell;">
+                <a href="/">
+                    <h1>AkuaJs</h1>
+                    <h3>The AkuaJs Analytical Engine</h3>
+                </a>
+            </header>
+            <div style="display: table-cell;">
+                <img src="images/tesseract.png" style="height:100px;vertical-align:botton;margin-left:100px;padding-top:20px" />
+            </div>
+            <h3><a href="/">Home &nbsp;</a><a href="documentation.html">Docs</a></h3>
+            <p>
+                This little Documentation gives an overview of some of the concepts and data structures of the AkuaJs  library.
+            </p>
+
+
+
+            <section id="main_content">
+                <hr>
+                <h1>Dimension</h1>
+                <img src="images/doc/dimension.png" />
+
+                <pre>
+                <code class="javascript">
+ require(["core/CoreBundle"], function() {    
+   dMonth = D("Month");
+   console.log(dMonth.toString())
+  });     
+                </code>
+                </pre>
+
+
+
+                <hr>
+                <h1>Element</h1>
+                <img src="images/doc/element.png" />
+
+                <pre>
+                <code class="javascript">
+ require(["core/CoreBundle"], function() {    
+   eAugust = E(D("Month"), "August");
+   console.log(eAugust.toString());
+  });     
+                </code>
+                </pre>
+
+
+
+
+
+                <hr>
+                <h1>Domain</h1>
+                <img src="images/doc/domain.png" />
+
+                <pre>
+                <code class="javascript">
+require(["core/CoreBundle"], function() {    
+    domain = Domain([D("Month"),D("City")]);
+ });     
+                </code>
+                </pre>
+
+                <hr>
+                <h1>Tuple</h1>
+                <img src="images/doc/tuple.png" />
+
+                <pre>
+                <code class="javascript">
+require(["core/CoreBundle"], function() {    
+    tuple = T([E(D("Month"), "July"), E(D("City"), "New York")],440);
+    console.log(tuple.ToAkuaDsl());
+    console.log(tuple.Domain());
+ });     
+                </code>
+                </pre>
+
+                <hr>
+                <h1>SameDomainTupleList</h1>
+                <img src="images/doc/samedomaintuplelist.png" />
+
+                <pre>
+                <code class="javascript">
+require(["core/CoreBundle"], function() {    
+  sdtl = SDTL([ 
+    T([E(D("Month"), "July"), E(D("City"), "New York")],440)
+   ,T([E(D("Month"), "August"), E(D("City"), "New York")],77)    
+]);
+console.log(sdtl.ToAkuaDsl());
+ });     
+                </code>
+                </pre>
+
+
+                <h1>And operation</h1>
+                <img src="images/doc/and.png" />
+
+                <pre>
+                <code class="javascript">
+require(["core/CoreBundle"], function() {    
+   tuple1 = T([E(D("Month"), "July"), E(D("City"), "New York")]);
+   tuple2 = T([E(D("Product"), "Car")]);
+   tuple3 = tuple1.And(tuple2);
+   console.log(tuple3.ToAkuaDsl());
+ });     
+                </code>
+                </pre>
+            </section>
+
+            <footer>
+                Copyright © 2015  <a href="https://github.com/Qrist0ph">Christoph Au&szlig;em</a> <br /> <a href="https://de.linkedin.com/pub/christoph-au%C3%9Fem/21/8b4/27">
+                    <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_liprofile_blue_80x15_de_DE.png?locale=" width="80" height="15" border="0" alt="Profil von Christoph Außem auf LinkedIn anzeigen">
+                </a><br>
+                <br>
+
+
+
+
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-NonCommercial 3.0 Unported License</a>.
+
+                <br>
+                This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+            </footer>
+
+            <script type="text/javascript">
+                var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+                document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+            <script type="text/javascript">
+                try {
+                    var pageTracker = _gat._getTracker("UA-71665224-1");
+                    pageTracker._trackPageview();
+                } catch (err) { }
+            </script>
+
+        </div>
+    </div>
+</body>
+</html>
