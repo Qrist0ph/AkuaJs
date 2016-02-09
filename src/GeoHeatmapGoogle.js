@@ -13,7 +13,7 @@ define(['core/CoreBundle'], function () {
     GoogleHeatmap.prototype.getView = function () {
         var me = this;
         var css = '<style>	' +
-           '#' + me.divid + '  {position:relative;float:left;width:800px;height:600px;border:1px dashed black;}</style>'
+           '#' + me.divid + '  {width:800px;height:600px;border:1px dashed black;}</style>'
 
         this.view = $('<div />').html(css + '<div  id="' + me.divid + '"  > </div> ');
         return this.view;
