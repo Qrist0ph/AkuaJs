@@ -119,6 +119,9 @@
     <Content Include="screen7.html" />
     <Content Include="screen8.html" />
     <Content Include="screen9.html" />
+    <Content Include="stylesheets\github-dark.css" />
+    <Content Include="stylesheets\print.css" />
+    <Content Include="stylesheets\stylesheet.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
