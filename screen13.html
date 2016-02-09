@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>AkuaJs Sample</title>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://cdn.rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/D3/d3.min.js"></script>
+    <script src="https://cdn.rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/heatmap/heatmap.min.js"></script>
+    <script src="https://cdn.rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/heatmap/gmaps-heatmap.js"></script>      
+    <script data-main="https://cdn.rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/main.js" src="https://cdn.rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/require.js"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/Qrist0ph/AkuaJs/latest/dist/plain/libs/nvd3/nv.d3.min.css" type="text/css" />    
+</head>
+<body>
+    <div id="center"></div>
+</body>
+
+
+
+<script type="text/javascript">
+var map;
+var heatmap; 
+ 
+    require(["GeoHeatmapGoogle"], function(GoogleMap) {
+
+        var tuples = [
+            T([E(D("coordinates"), { lat:51.76,lng:-1.55}),E(D("text"), "Point 1")],16),
+            T([E(D("coordinates"), { lat:50.75,lng:-1.55}),E(D("text"), "Point 2")],22),
+            T([E(D("coordinates"), { lat:48.15,lng:9.4667}),E(D("text"), "Point 3")],30),
+            T([E(D("coordinates"), { lat:52.35,lng:4.9167}),E(D("text"), "Point 4")],28),
+        ]
+       
+        	
+        map = GoogleMap({
+            axis0: A({
+                crosslists:
+                [
+                    TCL(tuples)
+                ]
+            }),
+			
+			Connection : LocalCubeConnection(HyperCube(SDTL(tuples))),
+          click:function(tuple,value){
+              alert(tuple +" "+value);
+          } ,
+          showMarkers:true,
+          center : { lat:52.35,lng:4.9167},
+          zoom: 6
+           
+
+        });
+        map.getViewCaller($("#center"));
+    });
+</script>
+</html>

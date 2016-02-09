@@ -431,6 +431,12 @@ footer a:hover {
 .screen12{
     height: 200px; width:200px;  background: transparent url(../images/screen12.png)  no-repeat;display: block;
 }
+
+.screen13{
+    height: 200px; width:200px;  background: transparent url(../images/screen13.png)  no-repeat;display: block;
+}
+
+
 .outer{
      display: table-cell; padding: 10px ; 
 }
