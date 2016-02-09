@@ -23,28 +23,29 @@ var heatmap;
  
     require(["GeoHeatmapGoogle"], function(GoogleMap) {
 
-        ePoint1 = E(D("point"), { lat: -25.363882,lng:131.044922});
-		eText1 = E(D("text"), "eine statdt");
-				
-		ePoint2 = E(D("point"), { lat: -23.363882,lng:131.044922});
-		eText2 = E(D("text"), "eine zweite statdt");			
-		
-      
-	
+        var tuples = [
+            T([E(D("coordinates"), { lat:51.76,lng:-1.55}),E(D("text"), "Point 1")],16),
+            T([E(D("coordinates"), { lat:50.75,lng:-1.55}),E(D("text"), "Point 2")],22),
+            T([E(D("coordinates"), { lat:48.15,lng:9.4667}),E(D("text"), "Point 3")],30),
+            T([E(D("coordinates"), { lat:52.35,lng:4.9167}),E(D("text"), "Point 4")],28),
+        ]
+       
+        	
         map = GoogleMap({
             axis0: A({
                 crosslists:
                 [
-                    TCL([
-                        T([ePoint1,eText1]),T([ePoint2,eText2])
-                    ])
+                    TCL(tuples)
                 ]
             }),
 			
-			Connection : LocalCubeConnection(HyperCube(SDTL([ 
-			T([ePoint1,eText1],88),
-			T([ePoint2,eText2],55)
-						])))
+			Connection : LocalCubeConnection(HyperCube(SDTL(tuples))),
+          click:function(tuple,value){
+              alert(tuple +" "+value);
+          } ,
+          showMarkers:true,
+          center : { lat:52.35,lng:4.9167},
+          zoom: 6
            
 
         });

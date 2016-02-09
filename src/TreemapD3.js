@@ -53,15 +53,16 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
        .style("visibility", "hidden")
        .style("background-color", "#ffffff");
 
+        var squares =
         div.datum(me.testdata()).selectAll(".node")
             .data(me.chart.nodes)
             .enter()
             .append("div")
                  .attr("class", "node")
                  .call(position)
-                  .style("cursor", "pointer")
                  .style("background", function (d) { return d.color ? d.color : null; })
                  .text(function (d) { return d.children ? null : me.writeTupleText(d.name); })
+
          .on("mouseover", function (d) {
 
              if (!d.size) return;
@@ -73,11 +74,12 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
                  + d3.locale(me.locale).numberFormat(me.numberFormat)(d.pkm1));
              tooltip.style("visibility", "visible");
              this.style.cursor = "hand";
-         }).on("mousemove", function () {
-             tooltip
-               .style("top", (d3.event.pageY) + "px")
-               .style("left", (d3.event.pageX) + "px");
          })
+            .on("mousemove", function () {
+                tooltip
+                  .style("top", (d3.event.pageY) + "px")
+                  .style("left", (d3.event.pageX) + "px");
+            })
           .on("mouseout", function () {
               tooltip.style("visibility", "hidden");
           })
@@ -86,6 +88,10 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
               if (me.click) me.click(d);
           });
         ;
+
+        if (me.click) {
+            squares.style("cursor", "pointer")
+        }
 
         function position() {
             this.style("left", function (d) { return d.x + "px"; })
