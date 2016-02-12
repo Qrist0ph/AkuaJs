@@ -3,8 +3,7 @@ define(['core/CoreBundle', "leaflet"], function () {
     _LeafletMap.prototype = new Apple();
     _LeafletMap.prototype.constructor = _LeafletMap;
     function _LeafletMap(configObject) {
-        Apple.call(this, configObject);
-        this.axis0 = configObject.axis0;
+        Apple.call(this, configObject);      
         this.height = configObject.height ? configObject.height : 450;
         this.InfoMessage = configObject.InfoMessage ? configObject.InfoMessage : "Info:";
         this.Unit = configObject.Unit ? configObject.Unit : "";
@@ -47,7 +46,7 @@ define(['core/CoreBundle', "leaflet"], function () {
             //Mit OpenStreetMap verwenden
             var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
             var osmAttrib = 'Map data <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
-            var osm = new L.TileLayer(osmUrl, { minZoom: 0, maxZoom: 12, attribution: osmAttrib }).addTo(me.map);
+            var osm = new L.TileLayer(osmUrl, { minZoom: 0,  attribution: osmAttrib }).addTo(me.map);
 
 
 
@@ -63,7 +62,7 @@ define(['core/CoreBundle', "leaflet"], function () {
             me.info.update = function (props) {
 
                 this._div.innerHTML = '<h4>' + me.InfoMessage + '</h4>' + (props ?
-                     '<b>' + props.Name + '</b><br />' + props.value.formatMoney(0, ',', '.', '') + ' ' + me.Unit
+                     '<b>' + props.Name + '</b><br />' + d3.locale(me.locale).numberFormat(me.numberFormat)(props.value) + ' ' + me.Unit
                      : '');
             };
 
@@ -134,14 +133,16 @@ define(['core/CoreBundle', "leaflet"], function () {
 
                 var color = me.getGradientColor(value, max);
 
-                return {
+                var r = {
                     weight: 2,
                     opacity: 1,
                     color: 'white',
                     dashArray: '1',
                     fillOpacity: 0.7,
-                    fillColor: color   //getColor(feature.properties.density)
+                    fillColor: color,   //getColor(feature.properties.density)
                 };
+				if(me.click)r.cursor = "hand"
+				return r;
             },
 
 
