@@ -85,7 +85,7 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
           })
           .on("click", function (d) {
               if (!d.size) return;
-              if (me.click) me.click(d);
+              if (me.click) me.click(d.tuple,d.size);
           });
         ;
 
@@ -117,7 +117,7 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
             var colorVal = value / max;
             var color = colorVal < 0 ? ColorLuminance("FF0000", 1 + colorVal) : ColorLuminance("00FF00", 1 - colorVal);
 
-            dataArray.push({ name: barAxis[i], size: this.getValue(barAxis[i].And(this.size)), color: color, pkm1: value });
+            dataArray.push({ name: barAxis[i], size: this.getValue(barAxis[i].And(this.size)), color: color, pkm1: value , tuple: barAxis[i]});
         }
 
         return {
@@ -131,7 +131,7 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
         this.getSelection().each(function () {
             str += $(this).text() + " ";
         });
-        alert(str);
+        //alert(str);
     };
 
     return function (configObject) { return new _TreemapD3.prototype.constructor(configObject); };
