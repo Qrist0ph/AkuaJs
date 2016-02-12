@@ -3,8 +3,7 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
     _BarChartNvd3.prototype = new Apple();
     _BarChartNvd3.prototype.constructor = _BarChartNvd3;
     function _BarChartNvd3(configObject) {
-        Apple.call(this, configObject);
-        this.axis0 = configObject.axis0;
+        Apple.call(this, configObject);       
         this.height = configObject.height ? configObject.height : 400;
         this.captionLength = configObject.captionLength;
         this.xAxisFormat = configObject.xAxisFormat ? configObject.xAxisFormat : function (d, i) { return truncateString(d, this.captionLength).replace("&hellip;", "..."); };
@@ -41,10 +40,17 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
                 .transition().duration(1200)
                 .call(me.chart);
 
-
+			  if (me.click){
+				  d3.selectAll("#" + me.divid + " .discreteBar")
+				  .style("cursor","hand");
+				  
+                me.chart.discretebar.dispatch.on('elementClick', function (e) { 
+				me.click(e.data.key,e.data.y);
+				} );
+				}
             if (me.actAsFilter)
                 me.chart.discretebar.dispatch.on('elementClick', function (e) {
-
+					
                     me.selected = e.data.key;
 
                     //reset previously selected bar
