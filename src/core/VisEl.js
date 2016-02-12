@@ -42,6 +42,7 @@ function Apple(configObject) {
 		if(configObject.axis1) this.axis1 = configObject.axis1;
 		if(configObject.pkm0) this.pkm0 = configObject.pkm0;
 		if(configObject.pkm1) this.pkm1 = configObject.pkm1;
+		if(configObject.slicer) this.slicer = configObject.slicer;
 		
         this.actAsFilter = configObject.actAsFilter ? configObject.actAsFilter : false;
 
