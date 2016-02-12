@@ -38,6 +38,12 @@ function Apple(configObject) {
     this.children = [];
     this.nameIndexes = [];
     if (configObject) {
+		if(configObject.axis0) this.axis0 = configObject.axis0;
+		if(configObject.axis1) this.axis1 = configObject.axis1;
+		if(configObject.pkm0) this.pkm0 = configObject.pkm0;
+		if(configObject.pkm1) this.pkm1 = configObject.pkm1;
+		if(configObject.slicer) this.slicer = configObject.slicer;
+		
         this.actAsFilter = configObject.actAsFilter ? configObject.actAsFilter : false;
 
         this.reactOnFilter = configObject.reactOnFilter ? configObject.reactOnFilter : false;

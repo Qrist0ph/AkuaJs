@@ -1,13 +1,13 @@
 define(['core/CoreBundle'], function() {
-	MultiSelect.prototype = new Apple();        // Here's where the inheritance occurs 
-	MultiSelect.prototype.constructor=MultiSelect;       // Otherwise instances of Cat would have a constructor of Mammal 
-	function MultiSelect(configObject){ 	
+	DropDownFilter.prototype = new Apple();        // Here's where the inheritance occurs 
+	DropDownFilter.prototype.constructor=DropDownFilter;       // Otherwise instances of Cat would have a constructor of Mammal 
+	function DropDownFilter(configObject){ 	
 		Apple.call(this, configObject);
 		this.options=configObject.axis0;			
 	} 
 	
 	
-	MultiSelect.prototype.getSelection = function() {    
+	DropDownFilter.prototype.getSelection = function() {    
 		r =[];
 		$("option:selected", this.view).each(function(){
 			r.push(jQuery(this).data());
@@ -15,7 +15,7 @@ define(['core/CoreBundle'], function() {
 		return Enumerable.From(r);
 	}
 	
-	MultiSelect.prototype.getView = function() {
+	DropDownFilter.prototype.getView = function() {
 		this.view = jQuery("<select></select>");
 		var me = this;	
 		var optionse = this.options.Tuples().ToArray();
@@ -33,7 +33,7 @@ define(['core/CoreBundle'], function() {
 	};
 	
 	
-	MultiSelect.prototype.selectionCallback = function() {
+	DropDownFilter.prototype.selectionCallback = function() {
 		this.parent.onSelectionChanged(this);
 		 /*
 		 str="";
@@ -43,8 +43,8 @@ define(['core/CoreBundle'], function() {
 		*/
 	};
 	
-	MultiSelect.prototype.updateValues = function() {
+	DropDownFilter.prototype.updateValues = function() {
 		
 	};
-	return function (configObject) { return new MultiSelect.prototype.constructor(configObject); };
+	return function (configObject) { return new DropDownFilter.prototype.constructor(configObject); };
 });
