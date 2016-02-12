@@ -3,15 +3,11 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
     _Sunburst.prototype = new Apple();
     _Sunburst.prototype.constructor = _Sunburst;
     function _Sunburst(configObject) {
-        Apple.call(this, configObject);
-        this.axis0 = configObject.axis0;
+        Apple.call(this, configObject);      
         this.schulden = configObject.schulden ? configObject.schulden : 0;
         this.height = configObject.height ? configObject.height : 400;
         this.captionLength = configObject.captionLength;
-        this.numberFormat = configObject.numberFormat ? configObject.numberFormat : [2, ',', '.', ''];
         //http://www.rapidtables.com/web/color/RGB_Color.htm
-
-
        
     }
 
@@ -45,11 +41,7 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
     };
 
 
-
-
     _Sunburst.prototype.updateValues = function () {
-
-
 
         // Dimensions of sunburst.
         //var width = this.height - 150;
@@ -72,7 +64,6 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
         //var vis = d3.select("#" + me.divid + " .chart").append("svg:svg")
         var vis = d3.select("#" + me.divid + " .chart").append("svg:svg")
             .attr("width", width)
-            // .attr("width", '100%')
             .attr("height", height)
             .append("svg:g")
             .attr("class", "container")
@@ -131,7 +122,13 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
                     return me.getColorByName(d.name);
                 })
                 .style("opacity", 1)
-                .on("mouseover", mouseover);
+                .on("mouseover", mouseover)
+				 .on("click", function (d) {
+              
+              if (me.click) me.click(d.tuple,d.size);
+          });
+		 
+				;
 
             // Add the mouseleave handler to the bounding circle.
             //d3.select("#" + me.divid + " .container").on("mouseleave", mouseleave);
@@ -143,6 +140,10 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
 
         // Fade all but the current sequence, and show it in the breadcrumb trail.
         function mouseover(d) {
+		
+		 if(me.click)
+		  this.style.cursor = "hand";
+		  
             var percentage = (100 * d.value / (totalSize + me.schulden)).toPrecision(3);
             var percentageString = percentage + "%";
             if (percentage < 0.1) {
@@ -150,7 +151,7 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
             }
 
             d3.select("#" + me.divid + " .percentage")
-                .html(d.value.formatMoney(0, ',', '.', '&euro;') + " </br> " + percentageString);
+                .html( d3.locale(me.locale).numberFormat(me.numberFormat)(d.value)+ " </br> " + percentageString);
 
             d3.select("#" + me.divid + " .explanation")
                 .style("visibility", "");
@@ -186,7 +187,10 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
                 .duration(100)
                 .style("opacity", 1)
                 .each("end", function () {
-                    d3.select(this).on("mouseover", mouseover);
+                    d3.select(this)
+					.on("mouseover", mouseover)
+					
+					;
                 });
 
             //d3.select("#" + me.divid + " .explanation")
@@ -366,7 +370,7 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
                     currentNode = childNode;
                 } else {
                     // Reached the end of the sequence; create a leaf node.
-                    childNode = { "name": nodeName, "size": size };
+                    childNode = { "name": nodeName, "size": size, tuple : barAxis[i]  };
                     children.push(childNode);
                 }
             }
