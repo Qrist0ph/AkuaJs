@@ -1,14 +1,14 @@
 define(['core/CoreBundle'], function () {
-    MultiSelectJqueyUi.prototype = new Apple();        // Here's where the inheritance occurs 
-    MultiSelectJqueyUi.prototype.constructor = MultiSelectJqueyUi;       // Otherwise instances of Cat would have a constructor of Mammal 
+    MultiSelectFilter.prototype = new Apple();        // Here's where the inheritance occurs 
+    MultiSelectFilter.prototype.constructor = MultiSelectFilter;       // Otherwise instances of Cat would have a constructor of Mammal 
 
-    function MultiSelectJqueyUi(configObject) {
+    function MultiSelectFilter(configObject) {
         Apple.call(this, configObject);       
         var me = this;
     }
 
 
-    MultiSelectJqueyUi.prototype.getSelection = function () {
+    MultiSelectFilter.prototype.getSelection = function () {
         var r = [];
         $(".ui-selected").each(function (k, v) {
             r.push(jQuery(v).data('payload'));
@@ -17,7 +17,7 @@ define(['core/CoreBundle'], function () {
         return Enumerable.From(r);
     }
 
-    MultiSelectJqueyUi.prototype.getView = function () {
+    MultiSelectFilter.prototype.getView = function () {
 
 		   var text = '<div> \
 	<style> \
@@ -48,12 +48,12 @@ define(['core/CoreBundle'], function () {
     };
 
 
-    MultiSelectJqueyUi.prototype.updateValues = function () {
+    MultiSelectFilter.prototype.updateValues = function () {
 
     };
 
 
  
 
-    return function (configObject) { return new MultiSelectJqueyUi.prototype.constructor(configObject); };
+    return function (configObject) { return new MultiSelectFilter.prototype.constructor(configObject); };
 });
