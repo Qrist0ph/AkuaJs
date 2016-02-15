@@ -61,12 +61,12 @@ define(['core/CoreBundle', 'nv.d3.min'], function () {
                  .attr("class", "node")
                  .call(position)
                  .style("background", function (d) { return d.color ? d.color : null; })
-                 .text(function (d) { return d.children ? null : me.writeTupleText(d.name); })
+                 .text(function (d) { return d.children ? null : me.drawMainLabel(d.name); })
 
          .on("mouseover", function (d) {
 
              if (!d.size) return;
-             tooltip.html(me.writeTupleText(d.name)
+             tooltip.html(me.drawMainLabel(d.name)
                  + " " + me.pkm0Name + " "
                  + d3.locale(me.locale).numberFormat(me.numberFormat)(d.size)
                  + " - "

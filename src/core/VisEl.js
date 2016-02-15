@@ -43,6 +43,7 @@ function Apple(configObject) {
 		if(configObject.pkm0) this.pkm0 = configObject.pkm0;
 		if(configObject.pkm1) this.pkm1 = configObject.pkm1;
 		if(configObject.slicer) this.slicer = configObject.slicer;
+        this.drawMainLabel = configObject.drawMainLabel?configObject.drawMainLabel:function(label){return label;};
 		
         this.actAsFilter = configObject.actAsFilter ? configObject.actAsFilter : false;
 

@@ -167,3 +167,8 @@ _T.prototype.ApplyCompressedProjection = function (projection, target) {
     }
     return target;
 }
+
+
+_T.prototype.ApplyCompressedProjection = function (dimension) {    
+    return Enumerable.From(x.elements).FirstOrDefault(function(e){return e.Dimension.equals(dimension);});
+}
